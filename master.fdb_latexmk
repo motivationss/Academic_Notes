@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber master"] 1658531491 "master.bcf" "master.bbl" "master" 1658531772
-  "master.bcf" 1658531772 107431 5d5c616f8d867a0a94d400cb9cf58457 "pdflatex"
+["biber master"] 1658531491 "master.bcf" "master.bbl" "master" 1658532171
+  "master.bcf" 1658532171 107431 5d5c616f8d867a0a94d400cb9cf58457 "pdflatex"
   "ref.bib" 0 -1 0 ""
   (generated)
   "master.bbl"
   "master.blg"
-["pdflatex"] 1658531769 "/Users/gaotangli/Desktop/Analysis_note/master.tex" "master.pdf" "master" 1658531772
+["pdflatex"] 1658532168 "/Users/gaotangli/Desktop/Analysis_note/master.tex" "master.pdf" "master" 1658532171
   "/Users/gaotangli/Desktop/Analysis_note/master.tex" 1658466948 2355 4e6e1b33f55c620d892ecce506c8b98f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -353,15 +353,15 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1651030811 2826436 72cc4a3b1bd833dc7fa02587f9e92fb7 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "Lectures/lec_1.tex" 1658531768 3695 1fd4c58774657bfd66e70e0a887dfc4d ""
+  "Lectures/lec_1.tex" 1658532168 3786 502677753e068dc641b7e67bcadc659d ""
   "Math.tex" 1658466065 2382 ca2b9be536fdb625ce67873804064cfc ""
   "header.tex" 1658512625 10318 6bc240c9a010ea61b0a4efaf78574ddb ""
-  "master.aux" 1658531772 3538 77fb393b89c3ed29deb792235929b7bd "pdflatex"
+  "master.aux" 1658532171 3538 77fb393b89c3ed29deb792235929b7bd "pdflatex"
   "master.bbl" 0 -1 0 "biber master"
-  "master.out" 1658531772 281 7f762be9c7bcdb72028428cb410e46dc "pdflatex"
-  "master.run.xml" 1658531772 2318 e34b2d35061647c770ab77c2b7d30e61 "pdflatex"
+  "master.out" 1658532171 281 7f762be9c7bcdb72028428cb410e46dc "pdflatex"
+  "master.run.xml" 1658532171 2318 e34b2d35061647c770ab77c2b7d30e61 "pdflatex"
   "master.tex" 1658466948 2355 4e6e1b33f55c620d892ecce506c8b98f ""
-  "master.toc" 1658531772 213 6bff72a771d696128c1038848754242e "pdflatex"
+  "master.toc" 1658532171 213 6bff72a771d696128c1038848754242e "pdflatex"
   (generated)
   "master.aux"
   "master.bcf"

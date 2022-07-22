@@ -1,0 +1,239 @@
+\lecture{2}{07 Jan. 10:00}{Homotopy Equivalence}
+\begin{prev}
+	Two maps \(f, g\colon X\to Y\) is \hyperref[def:homotopy]{homotopy} if there exists a map
+	\[
+		F_t(x)\colon X\times I\to Y
+	\]
+	with the properties
+	\begin{enumerate}[(1)]
+		\item Continuous
+		\item \(F_0(x) = f(x)\)
+		\item \(F_1(x) = g(x)\)
+	\end{enumerate}
+	\begin{remark}
+		The continuity of \(F_t\) is an even stronger condition for the continuity of \(F_t\) for a fixed \(t\).
+	\end{remark}
+\end{prev}
+
+We now introduce another concept.
+\begin{definition}[Homotopy relative]\label{def:homotopy-relative}
+	Given two spaces \(X, Y\), and let \(B\subseteq X\). Then a \hyperref[def:homotopy]{homotopy} \(F_t(x)\colon X\to Y\) is called
+	\emph{homotopy relative \(B\)} (denotes \(\mathrm{rel} B\)) if \(F_t(b)\) is independent of \(t\) for all \(b\in B\).
+\end{definition}
+
+\begin{eg}
+	Given \(X\) and \(B = \{0, 1\}\). Then the \hyperref[def:homotopy]{homotopy} of paths from \([0, 1]\to X\) is
+	\(\mathrm{rel} \{0, 1\}\).
+	\begin{figure}[H]
+		\centering
+		\incfig{eg:rel-homotopy}
+		\label{fig:eg:rel-homotopy}
+	\end{figure}
+\end{eg}
+
+\section{Homotopy Equivalence}
+With this, we can introduce the concept of \emph{homotopy equivalence}.
+\begin{definition*}
+	Let \(X\), \(Y\) be topological spaces, and \(f\colon X\to Y\) being a continuous map.
+	\begin{definition}[Homotopy equivalence]\label{def:homotopy-equivalence}
+		A map \(f\colon X\to Y\) is a \emph{homotopy equivalence} if \(\exists g\colon Y\to X\) such that
+		\[
+			f\circ g \simeq \identity_Y, \quad g\circ f \simeq \identity_X.
+		\]
+
+		\begin{figure}[H]
+			\centering
+			\incfig{def:homotopy-equivalence}
+			\label{fig:def:homotopy-equivalence}
+		\end{figure}
+	\end{definition}
+
+	\begin{definition}[Homotopy equivalent]\label{def:homotopy-equivalent}
+		If \(f\colon X\to Y\) is a \hyperref[def:homotopy-equivalence]{homotopy equivalence}, we then say that \(X\), \(Y\) are \emph{homotopy equivalent}.
+	\end{definition}
+
+	\begin{definition}[Homotopy inverse]\label{def:homotopy-inverse}
+		If \(f\colon X\to Y\) is a \hyperref[def:homotopy-equivalence]{homotopy equivalence} realize with \(g\), then \(g\) is called the \emph{homotopy inverse} of \(f\).
+	\end{definition}
+
+	\begin{definition}[Homotopy type]\label{def:homotopy-type}
+		If \(X, Y\) are \hyperref[def:homotopy-equivalence]{homotopy equivalent}, then we say that they have the
+		same \emph{homotopy type}.
+	\end{definition}
+
+\end{definition*}
+
+\begin{notation}
+	We denote a closed \(n\)-disk as \(D^n\).
+\end{notation}
+\begin{eg}
+	\(D^n\) is \hyperref[def:homotopy-equivalence]{homotopy equivalent} to a point.
+	\begin{figure}[H]
+		\centering
+		\incfig{eg:closed-disk-eq-point}
+		\label{fig:eg:closed-disk-eq-point}
+	\end{figure}
+\end{eg}
+\begin{explanation}
+	We see that \(f\circ g = \identity_\ast\) and
+	\[
+		g\circ f = \text{constant map at }\underbrace{0}_{g(\ast)},
+	\]
+	which is \hyperref[def:homotopic]{homotopic} to \(\identity_{D^n}\) by
+	\hyperref[eg:lec1:straight-line-homotopy]{straight line homotopy} \(F_t(x) = tx\). Specifically, we see that this holds for any convex set.
+\end{explanation}
+
+\begin{definition}[Contractible]\label{def:contractible}
+	We say that a space \(X\) is \emph{contractible} if \(X\) is \hyperref[def:homotopy-equivalence]{homotopy equivalent}
+	to a point.
+\end{definition}
+
+The following proposition is added much after, which may uses some concepts not yet covered.
+\begin{proposition}
+	The followings are equivalent.
+	\begin{enumerate}[(1)]
+		\item \(X\) is \hyperref[def:contractible]{contractible}.
+		\item \(\forall x\in X, \identity_{X}\simeq c _{x} \).
+		\item \(\exists x\in X, \identity_{X}\simeq c _{x} \).
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	We see that \(2. \implies 3.\) is obvious. We consider \(3.\implies 2.\) This follows from the following general lemma.
+	\begin{lemma}\label{lma:lec2}
+		Given a topological space \(X\) such that \(\exists x\in X, \identity_{X}\simeq c _{p} \), with \(f, g\colon Y\to X\), then \(f\simeq g\).
+	\end{lemma}
+	\begin{proof}
+		Let \(x\in X\) such that \(\identity_{X} \simeq c _{x} \). Then
+		\[
+			f = \identity_{X} \circ f\simeq c_{x} \circ f= c_{x} \circ g\simeq \identity_{X} \circ g = g.
+		\]
+	\end{proof}
+	Then, from this \autoref{lma:lec2}, we see that assuming \(x_0\in X\) such that \(\identity_{X} \simeq c_{x_0}\), then consider \(c_{x} \) for all \(x\in X\), then
+	from \autoref{lma:lec2}, we see that \(c_{x} \simeq \identity_{X} \).
+
+	To show \(3. \implies 1.\), we let \(x_0\in X\) such that \(\identity_{X}\simeq c_{x_0} \).
+	\[
+		\begin{tikzcd}
+			X & {\{\ast\}}
+			\arrow["f", curve={height=-6pt}, from=1-1, to=1-2]
+			\arrow["g", curve={height=-6pt}, from=1-2, to=1-1]
+		\end{tikzcd}
+	\]
+	Since \(g(\ast) = x_0\), and
+	\[
+		\begin{split}
+			g\circ f\colon X&\to X\\
+			x&\mapsto x_0,
+		\end{split}
+	\]
+	which is just \(c_{x_0}\), from the assumption we're done.
+
+	Now, we show \(1. \implies 3.\) Let
+	\[
+		\begin{tikzcd}
+			X & {\{\ast\}}
+			\arrow["f", curve={height=-6pt}, from=1-1, to=1-2]
+			\arrow["g", curve={height=-6pt}, from=1-2, to=1-1]
+		\end{tikzcd}
+	\]
+	be a \hyperref[def:homotopy-equivalence]{homotopy equivalent}, let \(g(\ast) = x_0\). We see that \(c_{x_0}\simeq \identity_{X} \) since
+	\[
+		g\circ f = c_{x_0} \simeq \identity_{X}.
+	\]
+\end{proof}
+\begin{remark}
+	Note that the above notation \(c _{x} \) is introduced \hyperref[not:constant-loop]{here}.
+\end{remark}
+
+\begin{definition*}
+	Before doing exercises, we introduce the following new concepts.
+	\begin{definition}[Retraction]\label{def:retraction}
+		Given \(B\subseteq X\), a \emph{retraction} from \(X\) to \(B\) is a map \(f\colon X\to X\) (or \(X\to B\))
+		such that \(\forall b\in B\ f(b) = b\), namely \(\at{r}{B}{} = \identity_B\). Or one can see this from
+		\[
+			\begin{tikzcd}
+				B \ar[rr, swap, bend right=30, "r \circ i"] \ar[r,hook,"i"] & X \ar[r, "r"] & B
+			\end{tikzcd}
+		\]
+		where \(r\) is a retraction if and only if \(r\circ i = \identity_B\), where \(i\) is an inclusion identity.
+	\end{definition}
+
+	\begin{definition}[Retract]\label{def:retract}
+		If the above \(r\) exists, we say that \(B\) is a \emph{retract} of \(X\).
+	\end{definition}
+
+	\begin{definition}[Deformation retraction]\label{def:deformation-retraction}
+		Given \(X\) and \(B\subseteq X\), a \emph{(strong) deformation retraction} \(F_t\colon X\to X\) onto \(B\) is
+		a \hyperref[def:homotopy]{homotopy} \(\mathrm{rel} B\) from the \(\identity_X\) to a \hyperref[def:retraction]{\emph{retraction}}
+		from \(X\) to \(B\). i.e.,
+		\[
+			\begin{alignedat}{4}
+				&F_0(x) &&= &&x\quad &&\forall x\in X\\
+				&F_1(x) &&\in &&B\quad &&\forall x\in X\\
+				&F_t(b) &&= &&b\quad &&\forall t\ \forall b\in B.
+			\end{alignedat}
+		\]
+	\end{definition}
+\end{definition*}
+
+\begin{exercise}
+	Let \(X\simeq Y\). Show \(X\) is path-connected if and only if \(Y\) is.
+\end{exercise}
+\begin{answer}
+	Suppose \(X\) is path-connected. Then we see that given two points \(x_1\) and \(x_2\) in \(X\), there exists a path \(\gamma(t)\) with
+	\[
+		\gamma\colon [0, 1]\to X,\quad \gamma(0) = x_1,\quad \gamma(1) = x_2.
+	\]
+	Since \(X\simeq Y\), then there exists a pair of \(f\) and \(g\) such that \(f\colon X\to Y\) and \(g\colon Y\to X\) with
+	\[
+		f\circ g\underset{F}{\simeq} \identity_Y,\quad g\circ f\underset{G}{\simeq} \identity_X.
+	\]
+	(Notice the abuse of notation)
+
+	For any two \(y_1\) and \(y_2\in Y\), we want to construct a path \(\gamma^\prime (t)\) such that
+	\[
+		\gamma^\prime \colon [0, 1]\to Y,\quad \gamma^\prime (0) = y_1,\quad \gamma^\prime (1) = y_2.
+	\]
+
+	Firstly, we let \(g(y_1) \eqqcolon x_1\) and \(g(y_2) \eqqcolon x_2\). From the argument above, we know there exists such
+	a \(\gamma\) starting at \(x_1 = g(y_1)\) ending at \(x_2 = g(y_2)\). Now, consider \(f(\gamma(t)) = (f\circ \gamma) (t)\)
+	such that
+	\[
+		f\circ \gamma\colon I\to Y,\quad f\circ \gamma(0) = y_1^\prime,\quad f\circ \gamma(1) = y_2^\prime,
+	\]
+	we immediately see that \(y_{1}^\prime\) and \(y_2^\prime \) is path connected. Now, we
+	claim that \(y_1\) and \(y_1^\prime\) are path connected in \(Y\), hence so are \(y_2\) and \(y_2^\prime \).
+	To see this, note that
+	\[
+		f\circ g\underset{F}{\simeq} \identity_Y,
+	\]
+	which means that there exists \(F\colon Y\times I\to Y\) such that
+	\[
+		\begin{dcases}
+			 & F(y_1, 0) = f\circ g(y_1) = f(x_1) = f(\gamma(0)) = (f\circ \gamma)(0) = y_1^\prime \\
+			 & F(y_1, 1) = \identity_Y(y_1) = y_1.
+		\end{dcases}
+	\]
+	Since \(F\) is continuous in \(I\), we see that there must exist a path connects \(y_1\) and \(y_1^\prime \). The same argument applies to
+	\(y_2\) and \(y_2^\prime \). Now, we see that the path
+	\[
+		y_1 \to y_1^\prime \to y_2^\prime \to y_2
+	\]
+	is a path in \(Y\) for any two \(y_1\) and \(y_2\), which shows \(Y\) is path-connected.
+
+	\begin{figure}[H]
+		\centering
+		\incfig{eg:path-connected}
+		\caption{Demonstration of the proof.}
+		\label{fig:eg:path-connected}
+	\end{figure}
+\end{answer}
+
+\textbf{Challenge}: One can further show that the connectedness is also preserved by any \hyperref[def:homotopy-equivalence]{homotopy equivalence}.
+\begin{corollary}
+	A \hyperref[def:contractible]{contractible} space is \hyperref[def:path]{path}-connected.
+\end{corollary}
+
+\begin{exercise}
+	Show that if there exists \hyperref[def:deformation-retraction]{deformation retraction} from \(X\) to \(B\subseteq X\), then \(X\simeq B\).
+\end{exercise}

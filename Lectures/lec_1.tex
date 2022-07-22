@@ -1,0 +1,74 @@
+\chapter{Foundations}\label{ch:Foundations}
+
+\lecture{1}{22 July. 01:17}{Groups and Homomorphism} 
+
+\section{Basics}
+\begin{definition}[Group]\label{def:group}
+	A pair (\(G\), \(\odot	\)) consisting of a nonempty set \(G\) and an operation \(\odot\)
+	is called a \textbf{group} if the following holds:
+	\begin{itemize}
+		\item \(G\) is closed under the operation \(\odot\)
+		\item \(\odot\) is associative
+		\item \(\odot\) has an identity element \(e\)
+		\item Each \(g \in G\) has an \textbf{inverse} \(h \in G\) such that \(g \odot h = h \odot g = e\)
+	\end{itemize}
+	
+\end{definition}
+
+\begin{definition}[Abelian group]\label{def:abelian-group}
+	A group \(G, \odot\) is called \textbf{commutative} or \textbf{Abelian}
+	if \(\odot\) is a commutative operation on \(G\).
+\end{definition}
+
+\begin{remark} 
+	Let \(G = \left(G, \odot\right) \)
+	\begin{enumerate}[label=(\alph*)]
+		\item the identity element \(e\) is unique
+		\item Each \(g \in G\) has a unique inverse which we denote by \(g^b\). In particular \(e^b = e\).
+		\item For each \(g \in G\), we have \(\left(g^b\right)^b = g\). 
+		\item For arbitrary group elements \(g\) and \(h\), \(\left(g \odot h\right)^b = h^b \odot g^b\)
+	\end{enumerate}
+\end{remark}
+
+\begin{eg}
+	\begin{enumerate}[label=(\alph*)]
+		\item Let \(G \coloneqq \{e\}\) be a one element set. Then \( \{G, \odot\} \) is an Abelian group, the 
+		\textbf{trivial group}, with the (only possible) operation \(e \odot e = e\). 
+		\item Let \(X\) be a nonempty set, and \(S_X\) be the set of all bijections from \(X\) to itself. 
+		Then \(S_X \coloneqq \left(S_X, \circ \right)\) is a group with identity element \(id_X\) when \(\circ\)
+		denotes the composition of functions. Further, the inverse function \(f^{-1}\) is the inverse of \(f \in S_X\)
+		in the group. When \(X\) is finite, the element of \(S_X\) are called permutations and \(S_X\) is called 
+		the \textbf{permutation group} of \(X\).
+		\item 
+	\end{enumerate}
+\end{eg}
+
+
+\section{\(\sigma\)-algebras}
+We start from the definition of the most fundamental element in measure theory.
+\begin{definition}[\(\sigma\)-algebra]\label{def:sigma-algebra}
+	Let \(X\) be a set. A collection \(\mathcal{A} \) of subsets of \(X\), i.e., \(\mathcal{A}\subset \mathcal{P} (X) \) is called a \emph{\(\sigma\)-algebra on \(X\)} if
+	\begin{itemize}
+		\item \(\varnothing \in \mathcal{A} \).
+		\item \(\mathcal{A} \) is closed under complements. i.e., if \(A\in \mathcal{A} \), \(A^c = X\setminus A\in \mathcal{A} \).
+		\item \(\mathcal{A} \) is closed under countable unions. i.e., if \(A_i\in \mathcal{A} \), then \(\bigcup\limits_{i=1}^{\infty} A_{i}\in \mathcal{A} \).
+		\item wd
+	\end{itemize}
+\end{definition}
+
+\begin{remark}
+	There are some easy properties we can immediately derive.
+	\begin{itemize}
+		\item \(X\in \mathcal{A} \) from \(X = X\setminus \underbrace{\varnothing}_{\in \mathcal{A}} \) and \(\mathcal{A}\) is closed under complement.
+		\item \(\bigcap\limits_{i=1}^{\infty} A_{i} = \left(\bigcup\limits_{i=1}^{\infty} A_{i}^{c} \right)^c\), namely \(\mathcal{A} \) is \underline{closed under countable intersections}.
+		\item \(A_1\cup A_2 \cup \ldots \cup A_n = A_1\cup A_2 \cup \ldots \cup A_n \cup \varnothing \cup \varnothing \cup\ldots\), hence \(\mathcal{A} \) is closed under finite unions and intersections.
+	\end{itemize}
+\end{remark}
+
+\begin{note}
+	The \hyperref[def:sigma-algebra]{definition of \(\sigma\)-algebra} should remind us the definition of topological basis, and this is indeed the case.
+	We can consider a topological space and put some structure on the \hyperref[def:sigma-algebra]{\(\sigma\)-algebra} \(\mathcal{\MakeUppercase{a}} \),
+	which gives us the following.
+\end{note}
+
+

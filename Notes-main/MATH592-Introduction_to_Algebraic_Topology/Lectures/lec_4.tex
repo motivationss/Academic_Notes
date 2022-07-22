@@ -1,0 +1,164 @@
+\lecture{4}{12 Jan. 10:00}{Cell Complex (CW Complex)}
+\begin{prev}
+	We saw that
+	\begin{itemize}
+		\item \hyperref[def:homotopy-equivalence]{homotopy equivalence}
+		\item \hyperref[def:homotopy]{homotopy} invariants
+		      \begin{itemize}
+			      \item path-connectedness
+		      \end{itemize}
+		\item not invariant
+		      \begin{itemize}
+			      \item dimension
+			      \item orientability
+			      \item compactness
+		      \end{itemize}
+	\end{itemize}
+\end{prev}
+
+\section{CW Complexes}
+
+\begin{eg}[Constructing spheres]
+	We now see how to construct \(S^1\) and \(S^2\) from ground up.
+	\begin{itemize}
+		\item \(S^1\) (up to homeomorphism\footnote{This is just the term for isomorphism in topology.})
+		      \begin{figure}[H]
+			      \centering
+			      \incfig{eg:constructing-sphere-1}
+			      \label{fig:eg:constructing-sphere-1}
+		      \end{figure}
+		\item \(S^2\)
+		      \begin{itemize}
+			      \item glue boundary of 2-disk to a point
+			      \item glue 2 disks onto a circle
+		      \end{itemize}
+		      \begin{figure}[H]
+			      \centering
+			      \incfig{eg:constructing-sphere-2}
+			      \caption{\textbf{Left}: Glue a \(2\)-disk to a point along its boundary. \textbf{Right}: Glue \(2\) disks to \(S^1\).}
+			      \label{fig:eg:constructing-sphere-2}
+		      \end{figure}
+		      The gluing instruction to construct \(S^2\) in the right-hand side can be demonstrated as follows.
+		      \begin{figure}[H]
+			      \centering
+			      \incfig{eg:constructing-sphere-2-gluing-instr}
+			      \label{fig:eg:constructing-sphere-2-gluing-instr}
+		      \end{figure}
+	\end{itemize}
+\end{eg}
+\begin{eg}[Constructing torus]
+	A torus \(T\) is just \(T = S^1 \times S^1\).
+	\begin{figure}[H]
+		\centering
+		\incfig{eg:constructing-torus}
+		\label{fig:eg:constructing-torus}
+	\end{figure}
+	view as gluing instructions
+	\[
+		\text{vertex }+ 2 \text{ edges }+2\text{-disks}.
+	\]
+	Soon, we'll see that above is just
+	\begin{figure}[H]
+		\centering
+		\incfig{eg:constructing-torus-gluing-instr}
+		\label{fig:eg:constructing-torus-gluing-instr}
+	\end{figure}
+\end{eg}
+
+
+\begin{notation}
+	Let \(D^n\) denotes a closed \(n\)-disk (or \(n\)-ball) \(D^n\simeq \left\{x\in\mathbb{\MakeUppercase{R}} ^n\colon \left\lVert x\right\rVert \leq 1\right\}\),
+	and let \(S^n\) denotes an \(n\)-sphere \(S^n\simeq \left\{x\in \mathbb{\MakeUppercase{R}}^{n+1}\colon \left\lVert x\right\rVert = 1\right\}\).
+\end{notation}
+
+Then, formally, we have the following definition.
+\begin{definition}[CW Complex]\label{def:CW-Complex}
+	A \emph{CW Complex} \(X\) is a topological space constructed inductively as follows. First, we have the basic elements called \hyperref[def:cell]{cells}.
+
+	\begin{definition}[Cell]\label{def:cell}
+		We call a point as a \emph{\(0\)-cell}, and the interior of \(D^n\) \(\Int (D^n)\) for \(n\geq 1\) as an \emph{\(n\)-cell}.
+	\end{definition}
+	Then, we use \hyperref[def:cell]{cells} to build our \hyperref[def:skeleton]{skeletons}.
+
+	\begin{definition}[Skeleton]\label{def:skeleton}
+		\item The \emph{\(0\)-skeleton} \(X^0\) is a set of discrete points, i.e, \hyperref[def:cell]{\(0\)-cell}.
+		\item We inductively construct the \emph{\(n\)-skeleton} \(X^n\) from \(X^{n-1}\) by attaching \hyperref[def:cell]{\(n\)-cells} \(e^n_{\alpha}\), where
+		\(\alpha\) is the index. Specifically, we follow the gluing instructions called \hyperref[def:attaching-map]{attaching maps} defined below and obtain \(X^n\)
+		from \(X^{n-1}\) by
+		\[
+			X^n = \quotient{\left(X^{n-1}\coprod\limits_{\alpha}D^n_\alpha\right)}{x\sim \varphi_{\alpha}(x)}
+		\]
+		with identification \(x\sim \varphi_{\alpha}(x)\) for all \(x\in \partial D^n_{\alpha}\) with quotient topology.
+		\begin{remark}
+			We write \(X^{(n)}\) for \hyperref[def:skeleton]{\(n\)-skeleton} if we need to distinguish from the Cartesian product.
+		\end{remark}
+	\end{definition}
+
+	\begin{definition}[Attaching map]\label{def:attaching-map}
+		The \emph{attaching map} for every \hyperref[def:cell]{cell} \(e^n_\alpha \) is a continuous map \(\varphi_{\alpha}\) such that
+		\[
+			\varphi_{\alpha}\colon \partial D^n_{\alpha}\to X^{n-1}.
+		\]
+	\end{definition}
+
+	Finally, we let \(X\) be defined as
+	\[
+		X = \bigcup\limits_{n=0} X^n,
+	\]
+	equipped with the so-called \hyperref[def:weak-topology]{weak topology} defined below.
+
+	\begin{definition}[Weak topology]\label{def:weak-topology}
+		The \emph{weak topology}, denoted as \(\overline{w} \), contains open set \(u\) such that
+		\[
+			u\subseteq X \text{ is open }\iff \forall n\ u\cap X^n \text{ is open }.
+		\]
+	\end{definition}
+
+	If all \hyperref[def:cell]{cells} have dimension less than \(N\) and there exists an \hyperref[def:cell]{\(N\)-cell}, then
+	\(X = X^N\) and we call it \emph{\(N\)-dimensional CW complex}.
+\end{definition}
+
+\begin{eg}
+	Let's look at some examples.
+	\begin{enumerate}[(1)]
+		\item \(0\)-dim \hyperref[def:CW-Complex]{CW complex} is a discrete space.
+		\item \(1\)-dim \hyperref[def:CW-Complex]{CW complex} is a graph.
+		\item A \hyperref[def:CW-Complex]{CW complex} \(X\) is \underline{finite} if it has finitely many \hyperref[def:cell]{cells}.
+	\end{enumerate}
+\end{eg}
+
+\begin{definition}[CW subcomplex]\label{def:CW-subcomplex}
+	A \emph{CW subcomplex} \(A\subseteq X\) is a closed subset equal to a union of \hyperref[def:cell]{cells}
+	\[
+		e^n_{\alpha} = \Int \left(D^n_{\alpha}\right).
+	\]
+\end{definition}
+\begin{remark}
+	This inherits a \hyperref[def:CW-Complex]{CW complex} structure.\todo{Check the images of \hyperref[def:attaching-map]{attaching maps}.}
+\end{remark}
+
+\begin{exercise}
+	Given the following gluing instruction:
+	\begin{figure}[H]
+		\centering
+		\incfig{ex:CW-complex-gluing}
+		\label{fig:ex:CW-complex-gluing}
+	\end{figure}
+	identify Torus, Klein bottle, Cylinder, Möbius band, 2-sphere, \(\mathbb{\MakeUppercase{R}} P\).
+
+	\begin{notation}
+		Notice that we call the real projection space as \(\mathbb{\MakeUppercase{R}} P\), and we also have so-called
+		complex projection space, denote as \(\mathbb{\MakeUppercase{C}} P\).
+	\end{notation}
+\end{exercise}
+\begin{answer}
+	We see that
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lll}
+			1. Torus        & 2. Cylinder    & 3. 2-sphere                                 \\\\
+			4. Klein bottle & 5. Möbius band & 6.         \(\mathbb{\MakeUppercase{R}} P\) \\
+		\end{tabular}
+	\end{table}
+\end{answer}
+

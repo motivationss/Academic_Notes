@@ -1,0 +1,530 @@
+\lecture{8}{24 Jan. 10:00}{The Fundamental Group \(\pi _1\)}
+\begin{eg}
+	In \hyperref[def:category]{category} \(\underline{\mathrm{Ab}}\) \hyperref[def:free-Abelian-group]{free Abelian group} on a set \(S\) is
+	\[
+		\bigoplus_S \mathbb{\MakeUppercase{z}}.
+	\]
+	In \hyperref[def:category]{category} of fields, no such thing as \textbf{\hyperref[def:free-group]{free} field on \(\bm{S} \)}.
+\end{eg}
+
+\subsection{Constructing the Free Groups \(F_S\)}
+\begin{proposition}
+	The \hyperref[def:free-group]{free group} defined by the universal property exists.
+\end{proposition}
+\begin{proof}
+	We'll just give a construction below. First, we see the definition.
+	\begin{definition}[Word]\label{def:word}
+		Fix a set \(S\), and we define a \emph{word} as a finite sequence (possibly \(\varnothing \))
+		in the formal symbols
+		\[
+			\left\{s, s ^{-1} \mid s\in S\right\}.
+		\]
+	\end{definition}
+
+	Then we see that elements in \(F_S\) are equivalence classes of \hyperref[def:word]{words} with the equivalence relation being
+	\begin{itemize}
+		\item deleted \(s s ^{-1} \) or \(s ^{-1} s\). i.e.,
+		      \[
+			      \begin{split}
+				      vs ^{-1} s w&\sim vw\\
+				      v s s ^{-1}  w &\sim vw
+			      \end{split}
+		      \]
+		      for every \hyperref[def:word]{word} \(v, w, s\in S\),
+	\end{itemize}
+	with the group operation being concatenation.
+	\begin{eg}
+		Given \hyperref[def:word]{words} \(ab^{-1} , bba\), their product is
+		\[
+			ab^{-1} \cdot bba = ab^{-1}  bb a = aba.
+		\]
+	\end{eg}
+	\begin{exercise}
+		There are something left to check.
+		\begin{enumerate}[(1)]
+			\item This product is well-defined on equivalence classes.
+			\item Every equivalence class of \hyperref[def:word]{words} has a unique \emph{reduced form}, namely the representation.
+			\item Check that \(F_S\) satisfies the universal property with respect to the map
+			      \[
+				      S\to F_S,\quad s\mapsto s.
+			      \]
+		\end{enumerate}
+	\end{exercise}
+\end{proof}
+
+\chapter{The Fundamental Group}
+The \hyperref[def:fundamental-group]{fundamental group} is the first and the simplest \hyperref[def:homotopy]{homotopy} group, which records information
+about the basic shape, or holes, of the topological space. Not surprisingly, this is already interesting enough to study and can help us distinguish
+between different shapes just by finding the spaces' corresponding \hyperref[def:fundamental-group]{fundamental groups}.
+\section{Path}
+We start with the definition.
+\begin{definition}[Path]\label{def:path}
+	A \emph{path} in a space \(X\) is a continuous map
+	\[
+		\gamma\colon I\to X
+	\]
+	where \(I = [0, 1]\).
+\end{definition}
+
+\begin{definition}[Homotopy path]\label{def:homotopy-path}
+	A \emph{homotopy of paths} \(\gamma_0\), \(\gamma_1\) is a \hyperref[def:homotopy]{homotopy} from \(\gamma_0\) to \(\gamma_1\) \(\mathrm{rel} \{0, 1\}\).
+	\begin{figure}[H]
+		\centering
+		\incfig{def:homotopy-of-paths}
+		\label{fig:def:homotopy-of-paths}
+	\end{figure}
+\end{definition}
+
+\begin{eg}
+	Fix \(x_1, x_0\in X\), then \underline{\(\exists\) \hyperref[def:homotopy]{homotopy} of \hyperref[def:path]{paths}} is an
+	equivalence relation on \hyperref[def:path]{paths}
+	from \(x_0\) to \(x_1\) (i.e., \(\gamma\) with \(\gamma(0)=x_0, \gamma(1)=x_1\)).
+\end{eg}
+
+\begin{definition}[Path composition]\label{def:path-composition}
+	For \hyperref[def:path]{paths} \(\alpha , \beta \) in \(X\) with \(\alpha (1) = \beta (0)\), the \emph{composition}\footnote{Also named \emph{product}, \emph{concatenation}.}
+	\(\alpha \cdot \beta \) is
+	\[
+		(\alpha \cdot \beta )(t) \coloneqq \begin{dcases}
+			\alpha (2t),  & \text{ if } t\in \left[0, \frac{1}{2}\right]  \\
+			\beta (2t-1), & \text{ if } t\in \left[\frac{1}{2}, 1\right].
+		\end{dcases}
+	\]
+	\begin{figure}[H]
+		\centering
+		\incfig{def:path-composition}
+		\label{fig:def:path-composition}
+	\end{figure}
+\end{definition}
+
+\begin{remark}
+	By the pasting lemma, this is continuous, hence \(\alpha \cdot \beta \) is actually a \hyperref[def:path]{path} from \(\alpha (0)\) to \(\beta (1)\).
+\end{remark}
+
+\begin{definition}[Reparameterization]\label{def:reparameterization}
+	Let \(\gamma\colon I\to X\) be a \hyperref[def:path]{path}, then a \emph{reparameterization} of \(\gamma\) is a \hyperref[def:path]{path}
+	\[
+		\gamma ^\prime \colon I\overset{\varphi }{\longrightarrow} I\overset{\gamma}{\longrightarrow} X
+	\]
+	where \(\varphi \) is \underline{continuous} and
+	\[
+		\varphi (0) = 0,\quad \varphi (1) = 1.
+	\]
+\end{definition}
+
+\begin{exercise}
+	A \hyperref[def:path]{path} \(\gamma\) is \hyperref[def:homotopy-relative]{homotopic \(\mathrm{rel} \{0, 1\}\)} to all of its
+	\hyperref[def:reparameterization]{reparameterizations}.
+\end{exercise}
+\begin{answer}
+	\par We show that \(\gamma\) and \(\gamma\circ \phi \) are \hyperref[def:homotopic]{homotopic} \(\mathrm{rel} \{0, 1\}\) by showing that
+	there exists a continuous \(F_t\) such that
+	\[
+		F_0 = \gamma,\quad F_1 = \gamma\circ \phi.
+	\]
+	Notice that since \(\phi \) is continuous, so we define
+	\[
+		F_t(x) = (1 - t) \gamma(x) + t\cdot \gamma\circ \phi (x).
+	\]
+	We see that
+	\[
+		F_0(x) = \gamma(x),\quad F_1(x) = \gamma\circ \phi (x),
+	\]
+	and also, we have
+	\[
+		F_t(x)\in X
+	\]
+	for all \(x, t\in I\).
+
+	\par Now, we check that \(F_t\) really gives us a \hyperref[def:homotopy-relative]{homotopic \(\mathrm{rel} \{0, 1\}\)}. We have
+	\[
+		\begin{split}
+			F_t(0) &= (1 - t)\gamma(0) + t\cdot \gamma\circ \phi (0) = (1 - t)\gamma(0) + t\cdot \gamma(\underbrace{\phi (0)}_{0}) = \gamma(0),\\
+			F_t(1) &= (1 - t)\gamma(1) + t\cdot \gamma\circ \phi (1) = (1 - t)\gamma(1) + t\cdot \gamma(\underbrace{\phi (1)}_{1}) = \gamma(1),
+		\end{split}
+	\]
+	which shows that \(0\) and \(1\) are independent of \(t\), hence \(\gamma\) and \(\gamma\circ \phi \) are \hyperref[def:homotopy-relative]{homotopic \(\mathrm{rel} \{0, 1\}\)}.
+\end{answer}
+
+\begin{exercise}
+	Fix \(x_1, x_1\in X\). Then \hyperref[def:homotopy-path]{\underline{homotopy of paths}} (\hyperref[def:homotopy-relative]{relative \(\{0, 1\}\)}) is an
+	equivalence relation on \hyperref[def:path]{paths} from \(x_0\) to \(x_1\).
+\end{exercise}
+
+\section{Fundamental Group and Groupoid}
+In class, we only discuss \hyperref[def:fundamental-group]{fundamental groups}. But there is an also important concept called
+\hyperref[def:fundamental-groupoid]{fundamental groupoid}, which is kind of similar but more general and power to use. I include
+this just for completeness, feel free to skip the additional content. Now, let's start with \hyperref[def:fundamental-group]{fundamental group}.
+
+\subsection{Fundamental Group}
+\begin{definition}[Fundamental group]\label{def:fundamental-group}
+	Let \(X\) denotes the space and let \(x_0\in X\) be the base point. The \emph{fundamental group of \(X\) based at \(x_0\)},
+	denoted by \(\pi_1(X, x_0)\), is a group such that
+	\begin{itemize}
+		\item Elements: \hyperref[def:homotopy]{Homotopy} classes \(\mathrm{rel} \{0, 1\}\) of \hyperref[def:path]{paths} \([\gamma]\) where \(\gamma\) is a \textbf{loop}
+		      with \(\gamma(0) = \gamma(1) = x_0\)\footnote{We say \(\gamma\) is \textbf{based} at \(x_0\).}
+		      \begin{figure}[H]
+			      \centering
+			      \incfig{def:fundamental-group-elements}
+			      \label{fig:def:fundamental-group-elements}
+		      \end{figure}
+		\item Operation: \hyperref[def:path-composition]{Composition of paths}.
+		\item Identity: Constant loop \(\gamma\) based at \(x_0\) such that
+		      \[
+			      \gamma\colon I\to X,\quad t\mapsto x_0
+		      \]
+		\item Inverses: The inverse \([\gamma]^{-1}\) of \([\gamma]\) is represented by the loop \(\overline{\gamma}\) such that
+		      \[
+			      \overline{\gamma} (t) = \gamma(1-t).
+		      \]
+		      \begin{figure}[H]
+			      \centering
+			      \incfig{def:fundamental-group-inverses}
+			      \label{fig:def:fundamental-group-inverses}
+		      \end{figure}
+	\end{itemize}
+\end{definition}
+\begin{proof}
+	We actually need to prove that the defined \(\pi _1\) actually is a group, hence, we prove that
+	\paragraph{Associativity.} \([\gamma_{1}\cdot (\gamma_2\cdot \gamma_3)] = [(\gamma_1\cdot \gamma_2)\cdot \gamma_3]\). We break this down into
+	\[
+		\gamma_1\cdot(\gamma_2\cdot \gamma_3)(t) = \begin{dcases}
+			\gamma_{1}(2t ),                 & t\in\left[0, \frac{1}{2}\right]; \\
+			(\gamma_2\cdot \gamma_3)(2t-1) , & t\in\left[\frac{1}{2}, 1\right]
+		\end{dcases} = \begin{dcases}
+			\gamma_{1}(2t ), & t\in\left[0, \frac{1}{2}\right];           \\
+			\gamma_2(4t-2) , & t\in\left[\frac{1}{2}, \frac{3}{4}\right]; \\
+			\gamma_3(4t-3) , & t\in\left[\frac{3}{4}, 1\right],
+		\end{dcases}
+	\]
+	and
+	\[
+		(\gamma_1\cdot\gamma_2)\cdot \gamma_3(t) = \begin{dcases}
+			(\gamma_{1}\cdot \gamma_2) (2t ), & t\in\left[0, \frac{1}{2}\right]; \\
+			\gamma_3(2t-1) ,                  & t\in\left[\frac{1}{2}, 1\right]
+		\end{dcases} = \begin{dcases}
+			\gamma_{1}(4t),  & t\in\left[0, \frac{1}{4}\right];           \\
+			\gamma_2(4t-1) , & t\in\left[\frac{1}{4}, \frac{1}{2}\right]; \\
+			\gamma_3(2t-1) , & t\in\left[\frac{1}{2}, 1\right].
+		\end{dcases}
+	\]
+
+	\par Then, we define \(\phi \colon I\to I\) such that
+	\[
+		\phi (t) = \begin{dcases}
+			2t\in\left[0, \frac{1}{2}\right],                      & t\in\left[0, \frac{1}{4}\right];           \\
+			t+\frac{1}{4}\in\left[\frac{1}{2}, \frac{3}{4}\right], & t\in\left[\frac{1}{4}, \frac{1}{2}\right]; \\
+			\frac{t+1}{2}\in\left[\frac{3}{4}, 1\right],           & t\in\left[\frac{1}{2}, 1\right].
+		\end{dcases}
+	\]
+	We easily see that
+	\[
+		\gamma_1\cdot(\gamma_2\cdot \gamma_3)(t) = (\gamma_1\cdot\gamma_2)\cdot \gamma_{3}\circ \phi (t)
+	\]
+	and \(\phi (t)\) is continuous and satisfied \(\phi (0) = 0\) and \(\phi (1) = 1\), which implies that the associativity holds.
+
+	\paragraph{Identity.} We want to show that \([\gamma\cdot c] = [\gamma]\). Again, we consider
+	\[
+		(\gamma\cdot c) (t) = \begin{dcases}
+			\gamma(2t),                    & t\in\left[0, \frac{1}{2}\right] ; \\
+			c(2t-1) = c = x_0 = \gamma(0), & t\in\left[\frac{1}{2}, 1\right].
+		\end{dcases}
+	\]
+	Now, consider \(\phi \colon I\to I\) such that
+	\[
+		\phi (t) = \begin{dcases}
+			2t, & t\in\left[0, \frac{1}{2}\right] ; \\
+			1,  & t\in\left[\frac{1}{2}, 1\right].
+		\end{dcases}
+	\]
+	We easily see that
+	\[
+		(\gamma\cdot c)(t) = (\gamma\circ \phi) (t)
+	\]
+	and \(\phi (t)\) is continuous and satisfied \(\phi (0) = 0\) and \(\phi (1) = 1\).
+
+	\paragraph{Inverses.} We want to show that \(\gamma\cdot \overline{\gamma} \simeq c\), where \(\overline{\gamma} (t) = \gamma(1-t)\).
+	Firstly, we have
+	\[
+		(\gamma\cdot \overline{\gamma})(t) = \begin{dcases}
+			\gamma(2t),               & t\in\left[0, \frac{1}{2}\right]; \\
+			\overline{\gamma} (1-2t), & t\in\left[\frac{1}{2}, 1\right].
+		\end{dcases}
+	\]
+
+	\par We consider \(F_t\) given by
+	\[
+		F_{t}(x) = \begin{dcases}
+			\gamma(2xt),              & x\in\left[0, \frac{1}{2}\right]; \\
+			\overline{\gamma}(1-2xt), & x\in\left[\frac{1}{2}, 1\right].
+		\end{dcases}
+	\]
+	If \(t = 0\), we have
+	\[
+		F_{0}(x) = \begin{dcases}
+			\gamma(0),            & x\in\left[0, \frac{1}{2}\right]; \\
+			\overline{\gamma}(1), & x\in\left[\frac{1}{2}, 1\right]
+		\end{dcases} = x_0
+	\]
+	for all \(x\in I\), namely \(F_0 = c\), while when \(t = 1\), we have
+	\[
+		F_{1}(x) = \begin{dcases}
+			\gamma(2x),              & x\in\left[0, \frac{1}{2}\right]; \\
+			\overline{\gamma}(1-2x), & x\in\left[\frac{1}{2}, 1\right]
+		\end{dcases} = (\gamma\cdot \overline{\gamma})(x),
+	\]
+	and we see that \(F_t\) is continuous since at \(x = \frac{1}{2}\), we have
+	\[
+		\gamma(2x) = \gamma(1) = \overline{\gamma} (0) = \overline{\gamma} (1 - 2x),
+	\]
+	hence we see that \(F_{t}\) is the \hyperref[def:homotopy]{homotopy} between \(\gamma\cdot \overline{\gamma} \) and \(c\).
+	\begin{figure}[H]
+		\centering
+		\incfig{def:fundamental-group}
+		\caption{Illustration of \(F_t\). Intuitively, the \hyperref[def:path]{path} \(\gamma\cdot \overline{\gamma}\) is \(x_0 \overset{\gamma}{\to} x_0 \overset{\overline{\gamma} }{\to} x_0\).
+			But now, \(F_t\) is \(x_0 \overset{\gamma}{\to} t \overset{\overline{\gamma} }{\to} x_0\). We can think of this \hyperref[def:homotopy]{homotopy} is \emph{pulling back}
+			the turning point along the original \hyperref[def:path]{path}.}
+		\label{fig:def:fundamental-group}
+	\end{figure}
+\end{proof}
+
+\begin{theorem}\label{thm:lec8}
+	If \(X\) is \hyperref[def:path]{path}-connected, then
+	\[
+		\forall x_0, x_1\in X\quad \pi_1(X, x_0)\cong \pi _1(X, x_1).
+	\]
+\end{theorem}
+\begin{proof}
+	\par To show that the \emph{change-of-basepoint map} is isomorphism, we show that it's one-to-one and onto.
+	\begin{itemize}
+		\item one-to-one. Consider that if \([h\cdot \gamma\cdot \overline{h} ] = [h\cdot \gamma ^\prime \cdot \overline{h} ]\), then since we know that \(h^{-1}  = \overline{h} \), hence
+		      in the \hyperref[def:fundamental-group]{fundamental group} \(\pi _1(X, x_0)\), we see that
+		      \[
+			      \overline{h} \cdot h\cdot \gamma\cdot \overline{h} \cdot h = \overline{h} \cdot h\cdot \gamma ^\prime \cdot \overline{h} \cdot h. \implies \gamma = \gamma ^\prime
+		      \]
+		      as we desired.
+		\item onto. We see that for every \(\alpha \in \pi_1(X, x_0)\), there exists a \(\gamma\in \pi_1(X, x_{0})\) such that
+		      \[
+			      \gamma = \overline{h} \cdot \alpha \cdot h\in \pi _1(X, x_1)
+		      \]
+		      since \(h\cdot \gamma\cdot \overline{h} =\alpha \).\footnote{Notice that this is indeed the case, one can verify this by the fact that \(h\colon x_{0}\to x_1\) and \(\overline{h} \colon x_1 \to x_0\).}
+	\end{itemize}
+
+	\par We then see that the \hyperref[def:fundamental-group]{fundamental group} of \(X\) does not depend on the choice of basepoint, only on the choice of the \hyperref[def:path]{path} component of the basepoint.
+	If \(X\) is \hyperref[def:path]{path}-connected, it now makes sense to refer to \emph{the} \hyperref[def:fundamental-group]{fundamental group} of \(X\) and write \(\pi _1(X)\) for the abstract group (up to isomorphism).
+\end{proof}
+\begin{remark}
+	We see that we can write \(\pi _1(X)\) up to isomorphism if \(X\) is \hyperref[def:path]{path}-connected from \autoref{thm:lec8}.
+\end{remark}
+
+\begin{exercise}
+	Composition of \hyperref[def:path]{paths} is well-defined on \hyperref[def:homotopy]{homotopy} classes \hyperref[def:homotopy-relative]{\(\mathrm{rel} \{0, 1\}\)}.
+\end{exercise}
+
+\begin{exercise}
+	If \(X\) is a \hyperref[def:contractible]{contractible} space, then \(X\) is \hyperref[def:path]{path}-connected and \(\pi _1(X)\)  is trivial.
+\end{exercise}
+
+The followings are the properties about \hyperref[def:homotopy-path]{homotopy path}. They are useful when we introduce \hyperref[def:fundamental-groupoid]{fundamental groupoid}.
+\begin{lemma}\label{lma:lec8-1}
+	Given \(x_0, x_1, x_2\in X\), \(\alpha , \alpha ^\prime\) are two \hyperref[def:path]{paths} from \(x_0\) to \(x_1\), and \(\beta , \beta ^\prime \) are two \hyperref[def:path]{paths} from \(x_1\) to \(x_2\). If
+	\(\left< \alpha  \right> = \left< \alpha ^\prime  \right> \), \(\left< \beta  \right> = \left< \beta ^\prime  \right> \), then \(\left< \alpha \cdot \beta  \right> = \left< \alpha ^\prime \cdot \beta ^\prime  \right>\).
+\end{lemma}
+\begin{proof}
+	Given \(\alpha \underset{F}{\simeq }\alpha ^\prime \ \mathrm{rel} \{0, 1\}\), \(\beta \underset{G}{\simeq }\beta ^\prime \ \mathrm{rel} \{0, 1\}\), then we want to prove
+	\[
+		\alpha \cdot \beta \simeq \alpha ^\prime \cdot \beta ^\prime\ \mathrm{rel} \{0, 1\}.
+	\]
+	This is done by using \hyperref[def:homotopy]{homotopy} \(H\colon I\times I\to X\) such that it combines \(F(2s, t)\) and \(G(2s-1, t)\).
+	\[
+		\begin{tikzcd}
+			{x_0} & {x_1} & {x_2}
+			\arrow["{\alpha^\prime}"', curve={height=6pt}, from=1-1, to=1-2]
+			\arrow["\alpha", curve={height=-6pt}, from=1-1, to=1-2]
+			\arrow["\beta", curve={height=-6pt}, from=1-2, to=1-3]
+			\arrow["{\beta^\prime}"', curve={height=6pt}, from=1-2, to=1-3]
+		\end{tikzcd}
+	\]
+	\begin{figure}[H]
+		\centering
+		\incfig{pf:lma:lec8-1}
+		\label{fig:pf:lma:lec8-1}
+	\end{figure}
+
+\end{proof}
+
+\begin{lemma}\label{lma:lec8-2}
+	Let \(x_0, x_1, x_2, x_3\in X\), \(\alpha\) is a \hyperref[def:path]{path} from \(x_0\) to \(x_{1}\), \(\beta\) is a \hyperref[def:path]{path} from \(x_1\) to \(x_2\), \(\gamma\) is a \hyperref[def:path]{path} from \(x_2\) to \(x_3\). Then
+	\[
+		\left< (\alpha \cdot \beta ) \cdot \gamma \right>  = \left< \alpha \cdot (\beta \cdot \gamma ) \right>.
+	\]
+\end{lemma}
+\begin{proof}
+	We can write out the \hyperref[def:homotopy]{homotopy} by the following diagram.
+	\begin{figure}[H]
+		\centering
+		\incfig{pf:lma:lec8-2}
+		\label{fig:pf:lma:lec8-2}
+	\end{figure}
+\end{proof}
+
+\begin{lemma}\label{lma:lec8-3}
+	Let \(X\) be a topological space, and \(x_0\in X\). Then for every \hyperref[def:homotopy-path]{path homotopy} \(\left< \alpha  \right> \) from
+	\(x_1\) to \(x_2\), we have
+	\[
+		\left< c_{x_1}\cdot \alpha  \right> = \left< \alpha  \right> = \left< \alpha \cdot c_{x_2} \right>.
+	\]
+\end{lemma}
+\begin{proof}
+	We only need to prove \(c_{x_1}\cdot \alpha \simeq \alpha\ \mathrm{rel} \{0,1\} \). The \hyperref[def:homotopy]{homotopy} can be written out explicitly by the following diagram.
+	\begin{figure}[H]
+		\centering
+		\incfig{pf:lma:lec8-3}
+		\label{fig:pf:lma:lec8-3}
+	\end{figure}
+\end{proof}
+
+\begin{lemma}\label{lma:lec8-4}
+	For every \hyperref[def:homotopy-path]{path homotopy} \(\left< \alpha  \right> \) from \(x_1\) to \(x_2\), then
+	\[
+		\left< \alpha \cdot \alpha ^{-1}  \right> = \left< c_{x_1} \right>, \qquad \left< \alpha ^{-1} \cdot \alpha  \right> = \left< c_{x_2} \right>.
+	\]
+\end{lemma}
+\begin{proof}
+	For the first case, we have the following diagram.
+	\begin{figure}[H]
+		\centering
+		\incfig{pf:lma:lec8-4}
+		\label{fig:pf:lma:lec8-4}
+	\end{figure}
+	The second case follows similarly.
+\end{proof}
+
+\subsection{Fundamental Groupoid}
+This section is not covered in class, but it's a useful concept. The idea is that after giving \autoref{def:fundamental-group}, we see that we actually create a \hyperref[def:fundamental-group]{fundamental group}
+at \textbf{every} point in \(X\), furthermore, when we use \autoref{thm:lec8} if \(X\) is \hyperref[def:path]{path}-connected, we actually \textbf{lose} some
+information about this space. Here is how we can store all the information.
+
+\begin{notation}[Constant loop]\label{not:constant-loop}
+	We denote \(c_x\), where \(x\in X\) such that
+	\[
+		\begin{split}
+			c_{x}\colon [0, 1]&\to X\\
+			t&\mapsto x
+		\end{split}
+	\]
+	as a \emph{constant loop}.
+\end{notation}
+
+\begin{definition}[Groupoid]\label{def:groupoid}
+	A \hyperref[def:category]{category} \(\mathscr{C}\) is a \emph{groupoid} if any \hyperref[def:morphism]{morphisms} in \(\mathscr{C}\)
+	is and isomorphism.
+\end{definition}
+\begin{remark}
+	We'll soon see that for any topological space \(x\), \autoref{def:fundamental-group} defines a \hyperref[def:groupoid]{groupoid}, denoted by \(\Pi (X)\).
+\end{remark}
+
+\begin{definition}[Fundamental groupoid]\label{def:fundamental-groupoid}
+	Let \(X\) denotes the space, then the \hyperref[def:category]{category} \(\Pi (X)\) is a \emph{fundamental groupoid of \(X\)} such that
+	\begin{itemize}
+		\item \(\Object (\Pi (X)) \coloneqq X \)
+		\item \(\Homomorphism (\Pi (X))\colon \forall p, q\in \Object (\Pi (X)) = X\),
+		      \[
+			      \Homomorphism _{\Pi (X)}(p, q) \coloneqq \quotient{\left\{\text{\hyperref[def:path]{Paths} from \(p\) to \(q\)} \right\}}{\sim }.
+		      \]
+		\item Composition: For every \(p, q, r\in \Object (\Pi (X)) = X\),
+		      \[
+			      \begin{split}
+				      \circ \colon \Homomorphism _{\Pi (X)}(p, q)\times \Homomorphism _{\Pi (X)}(q, r)&\to \Homomorphism _{\Pi (X)}(p, r)\\
+				      (\left< \alpha  \right> , \left< \beta  \right> )&\mapsto \left< \beta  \right> \circ \left< \alpha  \right> \coloneqq \left< \alpha \cdot \beta  \right>.
+			      \end{split}
+		      \]
+		\item Identity: For every \(p\in \Object (\Pi (X)) = X\), we define \(1_p\coloneqq \left< c_p \right> \in \Homomorphism _{\Pi (X)}(p, p)\) be the constant loop
+		      based at \(p\) such that for every \(\left< \alpha \right> \in \Homomorphism _{\Pi (X)}(p, q)\),
+		      \[
+			      \left< \alpha  \right> \circ \identity_{p} = \identity_{q}\circ \left< \alpha  \right> = \left< \alpha  \right>.
+		      \]
+		\item Associativity: Given \(p, q, r, s\in \Object (\Pi (X)) = X\), with the \hyperref[def:path]{paths}
+		      \[
+			      \begin{tikzcd}
+				      p & q & r & s
+				      \arrow["{\left<\alpha\right>}", curve={height=-6pt}, from=1-1, to=1-2]
+				      \arrow["{\left<\beta\right>}", curve={height=6pt}, from=1-2, to=1-3]
+				      \arrow["{\left<\gamma\right>}", curve={height=-6pt}, from=1-3, to=1-4]
+			      \end{tikzcd}
+		      \]
+		      Then
+		      \[
+			      \left< \gamma  \right> \circ \left(\left< \beta  \right> \circ \left< \alpha  \right> \right) = \left(\left< \gamma  \right> \circ \left< \beta  \right> \right)\circ \left< \alpha  \right>.
+		      \]
+	\end{itemize}
+\end{definition}
+\begin{proof}
+	Note that in \autoref{def:fundamental-groupoid}, we need to show some definitions are indeed well-defined, and we also need to show that \(\Pi (X)\) is actually a \hyperref[def:groupoid]{groupoid}.
+	\begin{itemize}
+		\item Composition: Since if \(\alpha \simeq \alpha ^\prime , \beta \simeq \beta ^\prime \), we
+		      have
+		      \[
+			      \alpha \cdot \beta \simeq \alpha ^\prime \cdot \beta ^\prime
+		      \]
+		      from \autoref{lma:lec8-1}.
+		\item Identity: It follows that
+		      \[
+			      \left< \alpha  \right> \circ \identity_{p} = \left< c_p\cdot \alpha  \right> = \left< \alpha  \right>
+		      \]
+		      from \autoref{lma:lec8-3}. The left identity can be shown similarly.
+		\item Associativity: It's trivial in the sense that all the \hyperref[def:homotopy]{homotopy} can be easily derived from
+		      \autoref{lma:lec8-2}.
+	\end{itemize}
+
+	Additionally, from \autoref{lma:lec8-4}, we see that given \(\alpha \) is a \hyperref[def:path]{path} from \(p\) to \(q\), then
+	\[
+		\begin{dcases}
+			\left< \alpha ^{-1} \cdot \alpha  \right> & = \left< c_q \right> \eqqcolon \identity_{q}  \\
+			\left< \alpha \cdot \alpha^{-1}  \right>  & = \left< c_p \right> \eqqcolon \identity_{p}.
+		\end{dcases}
+	\]
+	Furthermore, since \(\left< \alpha ^{-1} \cdot \alpha  \right> = \left< \alpha  \right> \circ \left< \alpha ^{-1}  \right> \) and
+	\(\left< \alpha \cdot \alpha^{-1} \right> = \left< \alpha ^{-1}\right> \circ \left< \alpha\right> \), hence this means
+	\(\Pi (X)\) is indeed a \hyperref[def:groupoid]{groupoid}.
+\end{proof}
+
+\begin{remark}
+	Assume \(\mathscr{C}\) is a \hyperref[def:groupoid]{groupoid}, then for every \(x\in \Object (\mathscr{C})\), we can define
+	\[
+		\cdot \colon \Homomorphism _{\mathscr{C}}(x, x) \times \Homomorphism _{\mathscr{C}}(x, x)\to \Homomorphism _{\mathscr{C}}(x, x)
+	\]
+	such that
+	\[
+		(f, g)\mapsto f\cdot g \coloneqq g\circ f.
+	\]
+	We can prove that
+	\[
+		\left(\Homomorphism _{\mathscr{C}}(x, x), \cdot \right)
+	\]
+	defines a group \(\mathrm{Aut}_{\mathscr{C}}(x) \) called the \emph{isotropy group} of \(\mathscr{C}\) at \(x\).
+\end{remark}
+\begin{exercise}
+	For every \(x, y\in \Object (\mathscr{C})\), if there exists \(f\in \Homomorphism _{\mathscr{C}}(x, y)\), then \(f\) induces
+	\[
+		f_\ast \colon \mathrm{Aut}_{\mathscr{C}}(x) \overset{\simeq}{\to } \mathrm{Aut}_{\mathscr{C}}(y),
+	\]
+	where \(f_\ast \) is a group homomorphism.
+\end{exercise}
+
+\begin{remark}
+	For every \(p\in X=\Object (\Pi (X))\), we have
+	\[
+		\mathrm{Aut} _{\Pi (X)}(p) = \pi _1(X, p).
+	\]
+
+	Firstly, since they're the same in the sense of \textbf{set}:
+	\[
+		\mathrm{Aut}_{\Pi (X)} (p) = \Homomorphism _{\Pi (X)}(p, p) = \quotient{\left\{\text{Loops in \(X\) based at \(p\)} \right\}}{\sim} = \pi _1(X, p).
+	\]
+	Hence, we only need to verify their group composition agrees. But this is trivial, since for every two \(\left< \alpha  \right> , \left< \beta  \right> \in \mathrm{Aut}_{\Pi (X)}(p) \),
+	\[
+		\underbrace{\left< \alpha  \right> \cdot \left< \beta  \right> }_{\text{Composition from \(\mathrm{Aut}_{\Pi(X)}\)}} = \left< \beta  \right> \circ \left< \alpha  \right> =\underbrace{ \left< \alpha \cdot \beta\right>}_{\text{Composition from \(\pi_1\) } }.
+	\]
+	This implies that \autoref{thm:lec8} is just a particular example as a \hyperref[def:groupoid]{groupoid}.
+\end{remark}

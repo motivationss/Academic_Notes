@@ -1,0 +1,249 @@
+
+
+\part{Foundations}
+\chapter{Groups and Homomorphism}\label{ch:group}
+\section{Basics}
+\begin{definition}[Group]\label{def:group}
+	A pair (\(G\), \(\odot	\)) consisting of a nonempty set \(G\) and an operation \(\odot\)
+	is called a \textbf{group} if the following holds:
+	\begin{itemize}
+		\item \(G\) is closed under the operation \(\odot\)
+		\item \(\odot\) is associative
+		\item \(\odot\) has an identity element \(e\)
+		\item Each \(g \in G\) has an \textbf{inverse} \(h \in G\) such that \(g \odot h = h \odot g = e\)
+	\end{itemize}
+	
+\end{definition}
+
+\begin{definition}[Abelian group]\label{def:abelian-group}
+	A group \(G, \odot\) is called \textbf{commutative} or \textbf{Abelian}
+	if \(\odot\) is a commutative operation on \(G\).
+\end{definition}
+
+\begin{remark} 
+	Let \(G = \left(G, \odot\right) \)
+	\begin{enumerate}[label=(\alph*)]
+		\item the identity element \(e\) is unique
+		\item Each \(g \in G\) has a unique inverse which we denote by \(g^b\). In particular \(e^b = e\).
+		\item For each \(g \in G\), we have \(\left(g^b\right)^b = g\). 
+		\item For arbitrary group elements \(g\) and \(h\), \(\left(g \odot h\right)^b = h^b \odot g^b\)
+	\end{enumerate}
+\end{remark}
+
+\begin{eg}
+	\begin{enumerate}[label=(\alph*)]
+		\item Let \(G \coloneqq \{e\}\) be a one element set. Then \( \{G, \odot\} \) is an Abelian group, the 
+		\textbf{trivial group}, with the (only possible) operation \(e \odot e = e\). 
+		\item Let \(X\) be a nonempty set, and \(S_X\) be the set of all bijections from \(X\) to itself. 
+		Then \(S_X \coloneqq \left(S_X, \circ \right)\) is a group with identity element \(id_X\) when \(\circ\)
+		denotes the composition of functions. Further, the inverse function \(f^{-1}\) is the inverse of \(f \in S_X\)
+		in the group. When \(X\) is finite, the element of \(S_X\) are called permutations and \(S_X\) is called 
+		the \textbf{permutation group} of \(X\).
+		\item Let \(X\) be a nonempty set and \(G, \odot \) a group. With the induced operation \(\odot\), 
+		\( \left(G^X, \odot\right)\) is a group. The inverse of \(f \in G^X\) is the function
+		\[
+			f^b \colon X 	\rightarrow G, \;\; x \mapsto \left(f\left(x\right)\right)^b
+		\]
+		\item Let \(G_1,\ldots,G_m\) be groups. Then \(G_1 \times \cdots \times G_m\) with the operation defined
+		analogously to (d) is a group called the \textbf{direct product} of \(G_1,\ldots,G_m\). 
+	\end{enumerate}
+\end{eg}
+
+\section{Subgroup}
+
+\begin{definition}[Subgroup]\label{def:subgroup}
+	Let \(G = \left(G, \odot\right)\) be a group and \(H\) a nonempty subset of \(G\), if
+	\begin{itemize}
+		\item \(H \odot H \subseteq H\)
+		\item \(h^b \in H\) for all \(h \in H\)
+	\end{itemize}
+	then \(H \coloneqq \left(H, \odot\right)\) is itself a group and is called a \textbf{subgroup} of \(G\).
+\end{definition}
+
+\begin{remark}
+	Here we use the same symbol \(\odot\) for the restriction of the operation to \(H\). Since
+	\(H\) is nonempty, there is some \(h \in H\) and so, from the two axioms above,
+	\(e = h^b \odot h\) is also in \(H\).
+\end{remark}
+
+\begin{eg} Let \(G = \left(G, \odot\right)\) be a group.
+	\begin{enumerate}[label=(\alph*)]
+		\item The trivial subgroup \(\{e\}\) and \(G\) itself are subgroups of \(G\), the smallest and
+		largest subgroups with respect to inclusion
+		\item If \(H_\alpha\), \(\alpha \in A\) are subgroups of \(G\), then \(\bigcap_\alpha H_\alpha\)
+		is also a subgroup of \(G\). 
+	\end{enumerate}
+\end{eg}
+
+\section{Cosets}
+\begin{definition}[Coset]\label{def:coset}
+	Let \(N\) be a subgroup of \(G\) and \(g \in G\). Then \(g \odot N\) is the \textbf{left coset}
+	and \(N \odot g\) is the \textbf{right coset} of \(g \in G\) with respect to \(N\).
+\end{definition}
+
+\begin{remark}
+	The definition of coset is related to the particular element.
+\end{remark}
+
+\begin{note}
+	If we define 
+
+	\begin{equation}
+		\label{eqn: coset_equivalence}
+		g \sim  h  \Leftrightarrow  g \in h \odot N
+	\end{equation}
+    Then \(\sim\) is an equivalence on \(G\).
+	\begin{proof}
+		\(\sim\) is reflexive because \(e \in N\)
+
+		Let \(g \in h \odot N\) and \(h \in k \odot N\), then 
+		\[
+			g \in \left(k \odot N \right) \odot N = k \odot \left(N \odot N\right) = k \odot N
+		\]
+
+		Let \(g \in h \odot N\), then there is some \(n \in N\) with \(g = h \odot n\). Then it 
+		follows that \(h = g \odot n^b \in N\).
+	\end{proof}
+
+	Here \ref{eqn: coset_equivalence} defines an equivalence relation on \(G\). For the equivalence
+	classes \(\left [ \cdot  \right ]\) with respect to \(\sim\), we have
+	\begin{equation}
+		\left[g\right] = g \odot N, \:\: g \in G.
+	\end{equation}
+	For this reason, we denote \(G / \sim \) by \(G/N\), and call \(G/N\) the \textbf{set of left cosets}
+	of \(G\) \textbf{modulo} \(N\).
+	Particularly, we have subgroups \(N\) such that
+	\begin{equation}
+		\label{eqn: normal_subgroup}
+		g \odot N = N \odot g, \:\:\: g \in G.
+	\end{equation}
+	Such a subgroup \ref{eqn: normal_subgroup} is called a \textbf{normal subgroup} of \(G\). We call
+	\(g \odot N\) the \textbf{coset of} \(g\) \textbf{modulo} \(N\) since each left coset is a right coset
+	and vice versa. 
+	We have a well-defined operation on \(G/N\) where \(N\) is the normal subgroup of \(G\), induced from \(\odot\), such that
+	\begin{equation}
+		(G/N) \times (G/N) \rightarrow G/N, \:\:\: (g\odot N,h\odot N) \mapsto (g\odot h) \odot N
+	\end{equation}
+\end{note}
+
+\begin{proposition}
+	Let \(G\) be a group and \(N\) a normal subgroup of \(G\). Then \(G/N\) with the induced operation
+	is a group, the \textbf{quotient group of} \(G\) \textbf{modulo} N.
+\end{proposition}
+
+\begin{proof}
+	It is easy to check that the operation is associative. Since \(\left(e \odot N\right)
+	\odot \left(g\odot N\right) = \left(e \odot g\right) \odot N = g \odot N \), the identity element
+	of \(G/N\) is \(N = e \odot N\). Also 
+	\[
+		\left(g^b \odot N\right) \odot \left(g \odot N\right) = \left(g^b \odot g\right) \odot N = N	
+	\]
+\end{proof}
+
+\begin{remark}
+	\begin{enumerate}[label=(\alph*)]
+		\item In notion of \ref{eqn: coset_equivalence}, \([e] = N\) is the identity element of
+		\(G/N\) and \([g]^b = [g^b]\) is the inverse of \([g] \in G/N\). We also have
+		\([g] \odot h = [g\odot h], \:\: g,h\in G\).
+		\item Any subgroup \(N\) of an Abelian group \(G\) is normal and so \(G/N\) is a group. 
+		Meanwhile, \(G/N\) is Abelian.
+	\end{enumerate}
+\end{remark}
+
+\section{Homomorphisms}
+
+\begin{definition}[Homomorphism]\label{def: homomorphism}
+	Let \(G = \left(G, \odot\right)\) and \(G{}' = \left(G{}', \circledast\right)\) be groups\dots
+	A function \(\varphi \colon G \rightarrow G{}'\) is called a (\textbf{group}) \textbf{homomorphism}
+	if 
+	\[
+		\varphi ( g \odot h ) = \varphi(g) \circledast \varphi(h), \:\:\:\:\: g,h\in G
+	\]
+\end{definition}
+
+\begin{definition}[Endomorphism]\label{def: endomorphism}
+	A homomorphism from \(G\) to itself
+\end{definition}
+
+\begin{remark}
+	\begin{enumerate}[label=(\alph*)]
+		\item Let \(e\) and \(e{}'\) be the identity elements of \(G\) and \(G{}'\) respectively,
+		and let \(\varphi \colon G \rightarrow G{}'\) be a homomorphism. Then
+		\[
+			\varphi(e) = e{}' \:\:\:\:\: \text{and} \:\:\: (\varphi(g))^b = \varphi(g^b), \:\:\: g \in G
+		\]
+		\begin{proof}
+			\(e{}' \circledast \varphi\left(e\right) = \varphi\left(e\right) = \varphi\left(e \odot e\right)
+			= \varphi\left(e\right) \circledast \varphi\left(e\right)\) \\
+			\(e{}' = \varphi\left(e\right) = \varphi\left(g^b \odot g\right) = \varphi\left(g^b\right)
+			\circledast \varphi\left(g\right)\)
+		\end{proof}
+
+		\item Let \(\varphi \colon G \rightarrow G{}'\) be a homomorphism. The \textbf{kernel} of 
+		\(\varphi\), ker(\(\varphi\)), defined by 
+		\[
+			\text{ker}(\varphi) \coloneqq \varphi^{-1}(e{}') = \{g \in G \: ; \: \varphi(g)=e{}'\}	
+		\]
+		is a normal subgroup of \(G\). 
+		\begin{proof}
+			First, try to prove ker(\(\varphi\)) is a subgroup of \(G\). For all \(g, h \in G\),
+			\begin{itemize}
+				\item \(\varphi\left(g \odot h\right) = \varphi\left(g\right) \circledast
+				\varphi \left(h\right) = e{}' \circledast e{}' = e{}' \)
+				\item \(\varphi\left(g^b\right) = \left(\varphi\left(g\right)\right)^b 
+				= \left(e{}'\right)^b = e{}'\)
+			\end{itemize}
+			Second, try to prove it is a normal subgroup. Let \(h \in g \odot \text{ker}\left(\varphi\right)\). 
+			Then we there is some \(n \in G\) such that \(\varphi\left(n\right) = e{}'\) and 
+			\(h = g \odot n\). For \(m \coloneqq g \odot n \odot g^b\), we have
+			\[
+				\varphi(m) = \varphi(g) \circledast	\varphi(n) \circledast \varphi(g^b)
+				= \varphi(g) \circledast \varphi(g^b) = e{}' 
+			\]
+			and hence \(m \in \text{ker}\left(\varphi\right)\). Since \(m \odot g = g \odot m = h\),
+			this implies that \(h \in \text{ker}\left(\varphi\right) \odot g\). So 
+			\(\text{ker}\left(\varphi\right) \odot g \subseteq g \odot \text{ker}\left(\varphi\right)\).
+			Similarly one can show \(g \odot \text{ker}\left(\varphi\right) \subset
+			\text{ker}\left(\varphi\right) \odot g \).
+		\end{proof}
+
+		\item Let \(\varphi \colon G \rightarrow G{}'\) be a homomorphism and \(N \coloneqq\text{ker}\left(\varphi\right) \). Then
+		\[
+			g \odot N = \varphi^{-1}(\varphi(g)), \:\:\:\:\:       g \in G, 	
+		\]
+		and so
+		\[
+			g \sim h \Leftrightarrow \varphi(g) = \varphi(h), \:\:\:\:\: g,h \in G,	
+		\]
+		where \(\sim\) denotes the equivalence relation \ref{eqn: coset_equivalence}.
+
+		\item A homomorphism is injective if and only if its kernel is trivial, that is,
+		ker\(\left(\varphi\right) = \{e\}\)
+		\item The image im(\(\varphi\)) of a homomorphism \(\varphi \colon G \rightarrow G{}'\) is a subgroup of \(G{}'\).
+	\end{enumerate}
+\end{remark}
+
+\begin{eg}  
+	\begin{enumerate}[label=(\alph*)]
+		\item The constant function \(G \rightarrow G{}'\), \(g \mapsto e{}'\) is a homorphism,
+		the \textbf{trivial} homomorphism.
+		\item The identity function \(\text{id}_G \colon G \rightarrow G\) is an endomorphism.
+		\item Compositions of homomorphisms (endomorphisms) are homomorphisms (endomorphisms).
+		\item If \(\varphi \colon G \rightarrow G{}'\) is a bijective homomorphism, then so is
+		\(\varphi^{-1} \colon G \rightarrow G{}'\)
+	\end{enumerate}
+\end{eg}
+
+\begin{definition}[Isomorphism]\label{def: isomorphism}
+	A homomorphism \(\varphi \colon G \rightarrow G{}'\) is called a (\textbf{group}) \textbf{isomorphism}
+	from \(G\) to \(G{}'\) if \(\varphi\) is bijective. \\
+	In this circumstance, we say that the groups \(G\) and \(G{}'\) are \textbf{isomorphic} and write
+	\(G \cong G{}'\). 
+\end{definition} 
+
+\begin{definition}[Automorphism]\label{def: automorphism}
+	An isomorphism from \(G\) to itself. 
+\end{definition}
+
+
+

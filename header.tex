@@ -295,6 +295,25 @@
 		}%
 }
 
+\def\@topic{}%
+\newcommand{\topic}[3]{
+	\ifthenelse{\isempty{#3}}{%
+		\def\@topic{Topic #1}%
+	}{%
+		\def\@topic{Topic #1: #3}%
+	}%
+	\section*{\@topic}
+	\marginpar{\small\textsf{\mbox{#2}}}
+}
+\usepackage{pgffor}%
+\newcommand{\tpc}[2]{%
+	\foreach \c in {#1,...,#2}{%
+			\IfFileExists{Topics/tpc_\c.tex} {%
+				\input{Topics/tpc_\c.tex}%
+			}{}%
+		}%
+}
+
 % fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.26)  22 JUL 2022 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.26)  23 JUL 2022 01:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,19 +1261,19 @@ Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footer
 \f@nch@O@orf=\skip183
 )
 
-Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 305.
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 324.
 
 
-Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 307.
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 326.
 
 
-Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 308.
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 327.
 
 
-Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 309.
+Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 328.
 
 
-Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 310.
+Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 329.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2021/06/04 v1.1.5 Todonotes source and documentation.
@@ -1449,32 +1449,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Reference `Apx:Additional-Proofs' on page 1 undefined on input line 29.
-
-
-LaTeX Warning: Citation 'folland1999real' on page 1 undefined on input line 32.
-
-
-LaTeX Warning: Citation 'tao2013introduction' on page 1 undefined on input line 32.
-
-
-LaTeX Warning: Citation 'axler2019measure' on page 1 undefined on input line 32.
-
-
-Overfull \hbox (22.05829pt too wide) in paragraph at lines 32--34
-[]\T1/cmr/m/n/10 Additionally, we'll use Folland[[]] as our main text, while us-ing Tao[[]]
- []
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.36 \end{abstract}
-                    [1]
-Package marginnote Info: Using workaround for absolute page number on input line 36.
- (./master.toc)
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./master.toc)
 \tf@toc=\write6
 \openout6 = `master.toc'.
 
@@ -1482,23 +1457,22 @@ Package marginnote Info: Using workaround for absolute page number on input line
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Foundations}\label{ch:Foundations} [1
+l.3 \part
+         {Foundations} [1
 
 ]
-Package marginnote Info: Using workaround for absolute page number on input line 1.
+Package marginnote Info: Using workaround for absolute page number on input line 3.
+ [2
 
+]
 Chapter 1.
-Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 4.
-Package marginnote Info: right page because not two side mode on input line 4.
-Package marginnote Info: xpos seems to be 72.2698pt on input line 4.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 4.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 6.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 6.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 6.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1511,64 +1485,107 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 34.
 Package hyperref Info: bookmark level for unknown eg defaults to 0 on input line 34.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 47.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 47.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 49.
-[2
+ [3
 
 ]
-Package mdframed Info: Not enough space on this page on input line 57.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 60.
+(mdframed)              on input line 54.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 64.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 69.
-Package hyperref Info: bookmark level for unknown note defaults to 0 on input line 69.
-) [3]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 79.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 85.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 89.
+Package hyperref Info: bookmark level for unknown note defaults to 0 on input line 89.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 97.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 106.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 130.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 130.
+ [4]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 135.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 144.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 155.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 164.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 169.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 176.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 180.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 189.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 208.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 224.
+ [5]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 227.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 237.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 244.
+) (./Lectures/lec_2.tex [6]
+Chapter 2.
+) [7
 
-LaTeX Warning: Empty bibliography on input line 51.
+]
+
+LaTeX Warning: Empty bibliography on input line 36.
 
 (./master.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 7F762BE9C7BCDB72028428CB410E46DC;281.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                master
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: B117A8DF263EDFC821E2EC50CA27D57B;863.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52064 strings out of 478268
- 1190921 string characters out of 5846347
- 1940186 words of memory out of 5000000
- 69383 multiletter control sequences out of 15000+600000
- 497961 words of font info for 111 fonts, out of 8000000 for 9000
+ 51978 strings out of 478268
+ 1188955 string characters out of 5846347
+ 1962266 words of memory out of 5000000
+ 69252 multiletter control sequences out of 15000+600000
+ 495217 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,11n,100p,1298b,1181s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on master.pdf (5 pages, 244191 bytes).
+ 108i,11n,100p,1298b,1595s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb>
+Output written on master.pdf (8 pages, 246832 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 248 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

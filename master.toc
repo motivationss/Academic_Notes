@@ -11,3 +11,6 @@
 \contentsline {section}{\numberline {2.4}Ordered Field}{9}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Formal Power Series}{9}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Polynomials}{10}{section.2.6}%
+\contentsline {chapter}{\numberline {3}The Real Numbers}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Order Completeness}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Consequence of Order Completeness}{12}{section.3.2}%

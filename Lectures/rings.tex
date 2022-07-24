@@ -1,3 +1,213 @@
 
 \chapter{Rings, Fields and Polynomials}
 
+\section{Rings}
+
+\begin{definition}[Ring]\label{def: ring}
+    A triple (\(R, +, \cdot\)) consisting of a nonempty set \(R\) and operations, \textbf{addition}
+    \(+\) and \textbf{multiplication} \(\cdot\), is called a \textbf{ring} if 
+    \begin{itemize}
+        \item (\(R, +\)) is an Abelian group
+        \item Multiplication is associative
+        \item The \textbf{distributive law} holds:
+        \[
+            (a + b) \cdot c = a \cdot c + b \cdot, \:\: c \cdot (a + b) = c \cdot a + c \cdot b, \:\:\: a,b,c \in R  
+        \]
+    \end{itemize}
+\end{definition}
+
+\begin{note}
+    A ring is called \textbf{commutative} if multiplication is commutative. \\
+    If there is an identity element with respect to multiplication, then it is written as 
+    \(1_R\) or simply 1, and is called the \textbf{unity} (or \textbf{multiplicative identity})
+    of \(R\), and we say (\(R, +, \cdot\)) is a \textbf{ring with unity}. \\
+    When the addition and multiplication operations are clear from context, we write simply
+    \(R\) instead of (\(R, +, \cdot\)).
+\end{note}
+
+\begin{eg}
+    \begin{enumerate}[label=(\alph*)]
+        \item The \textbf{trivial ring} has exactly one element 0 and is itself denoted by 0.
+        A ring with more than one element is \textbf{nontrivial}. If \(R\) is a ring with unity,
+        then it follows from \(1_R \cdot a = a\) for each \(a \in R\), that \(R\) is trivial 
+        if and only if \(1_R == 0_R\).
+        \item Suppose \(R\) is a ring and \(S\) is a nonempty subset of \(R\) that satisfies the
+        following:
+        \begin{itemize}
+            \item \(S\) is a subgroup of (\(R, +\)). 
+            \item \(S \cdot S \subseteq S\)
+        \end{itemize}
+        Then \(S\) itself is a ring, a \textbf{subring} of \(R\), and \(R\) is called an \textbf{overring}
+        of \(S\). If \(R\) is commutative then so is \(S\), but the converse is not true in general.
+        \item Intersections of subrings are subrings.
+    \end{enumerate}
+\end{eg}
+
+\begin{definition}[Ring Homomorphism]\label{def: ring_homomorphism}
+    Let \(R\) and \(R{}'\) be rings. A (\textbf{ring}) \textbf{homomorphism} is a function
+    \(\varphi \colon R \rightarrow R{}'\) which is compatible with the ring operations, that is,
+    \begin{equation}
+        \label{eqn: ring_homo}
+        \varphi(a + b) = \varphi(a) + \varphi(b), \:\:\:\:\: \varphi(ab) = \varphi(a)\varphi(b), \:\: a,b \in R
+    \end{equation}
+\end{definition}
+
+\begin{note}
+    If, in addition, \(\varphi\) is bijective, then \(\varphi\) is called a (\textbf{ring}) \textbf{isomorphism}
+    and \(R\) and \(R{}'\) are \textbf{isomorphic}.\\
+    A homomorphism \(\varphi\) from \(R\) to itself is a (\textbf{ring}) \textbf{endomorphism}. If \(\varphi\)
+    is an isomorphism, then it is a (\textbf{ring}) \textbf{automorphism}.
+\end{note}
+
+\begin{eg}
+    \begin{enumerate}[label=(\alph*)]
+        \item A ring homomorphism \(\varphi \colon R \rightarrow R{}'\) is, in particular, a
+        group homomorphism from (\(R, +\)) to (\(R{}', +\)). The \textbf{kernel}, ker(\(\varphi\)),
+        of \(\varphi\) is defined to be the kernel of this group homomorphism, that is,
+        \[
+          \text{ker}(\varphi) = \{ a \in R ; \varphi(a) = 0 \} = \varphi^{-1}(0)  
+        \]
+        \item The \textbf{zero function} \(R \rightarrow R{}'\), \(a \mapsto 0_{R{}'}\) is a
+        homomorphism with ker(\(\varphi\)) = \(R\). 
+        \item Let \(R\) and \(R{}'\) be rings with unity and \(\varphi \colon R \rightarrow R{}'\)
+        a homomorphism. As (b) shows, it does not necessarily follow that \(\varphi\left(1_R\right) = 1_{R{}'}\). 
+        This can be seen as a consequence of the fact that, with respect to multiplication, a ring 
+        is not a group.
+    \end{enumerate}
+\end{eg}
+
+\section{Consequence of Ring Definitions}
+
+\begin{definition}[The Binomial Theorem]\label{def: binomial_theorem}
+    Let \(a\) and \(b\) be two commuting elements (\(ab = ba\)) of a ring \(R\) with unity.
+    Then, for all \(n \in \mathbb{N}\),
+    \[
+        (a + b)^b = \sum^n_{k=0} \binom{n}{k}a^kb^{n-k}  
+    \]
+\end{definition}
+
+\begin{lemma}
+    For \(m \in \mathbb{N}\) with \(m \geq 2\), an element \(\alpha = \left(\alpha_1\ldots\alpha_m\right)
+    \in \mathbb{N}^m\) is called a \textbf{multi-index}. The \textbf{length} \(\left | \alpha \right |\)
+    of a multi-index \(\alpha \in \mathbb{N}^m\) is defined by 
+    \[
+        \left |  \alpha   \right |  \coloneqq \sum^m_{j=1}\alpha_j
+    \]
+    Set also 
+    \[
+        \alpha! \coloneqq \prod^m_{j=1} (\alpha_j)!,    
+    \]
+    and define the \textbf{natural} (\textbf{partial}) \textbf{order} on \(\mathbb{N}^m\) by
+    \[
+        \alpha \leq \beta \rightleftarrows (\alpha_j \leq \beta_j, \:\: 1 \leq j \leq m).   
+    \]
+    for \(a = \left(a_1, \ldots, a_m\right) \in R^m \) and \(\alpha = \left(\alpha_1,\ldots,\alpha_m\right)\in \mathbb{N}^m\)
+
+\end{lemma}
+
+\begin{definition}[The Multinomial Theorem]\label{def: multinomial_theorem}
+    Let \(R\) be a commutative ring with unity. Then for all \(m \geq 2\),
+    \[
+      (\sum_{j=1}^m \alpha)^k = \sum_{ \left | \alpha \right | = k } \frac{k!}{\alpha!} a^{\alpha},
+      \:\:\: a = (a_1, \ldots, a_m) \in R^m, \:\: k \in \mathbb{N}.  
+    \]
+\end{definition}
+
+\section{Field}
+
+\begin{definition}[Field]\label{def: field}
+    \(K\) is a \textbf{field} when the following are satisfied:
+    \begin{itemize}
+        \item \(K\) is a commutative ring with unity.
+        \item 0 \(\neq\) 1
+        \item \(K^{\times} \coloneqq K \backslash \{0\} \) is an Abelian group with respect to multiplication.
+    \end{itemize}
+\end{definition}
+
+\begin{note}
+    The Abelian group \(K^{\times} \coloneqq \left(K^{\times}, \cdot\right)\) is called the 
+    \textbf{multiplicative group} of \(K\).
+\end{note}
+
+\begin{remark}
+    Let \(K\) be a field.
+
+    \begin{enumerate}[label=(\alph*)]
+        \item For all \(a \in K^{\times}\), \(\left(a^{-1}\right){-1} = a\)
+        \item A field has no zero divisors
+        \item Let \(a \in K^{\times}\) and \(a \in K^{\times}\) and \(b \in K\). Then there 
+        is an unique \(x \in K\) with \(ax = b\), namely the \textbf{quotient} 
+        \(\frac{b}{a} \coloneqq b/a \coloneqq ba^{-1}\)
+        \item Let \(K{}'\) be a field and \(\varphi \colon K \rightarrow K{}'\) a 
+        homomorphism with \(\varphi \neq 0\). Then 
+        \[
+            \varphi(1_K) = 1_{K{}'} \:\:\: \text{   and   } \:\:\: \varphi(a^{-1}) = \varphi(a)^{-1}, \:\: a \in K^\times  
+        \]
+    \end{enumerate}
+\end{remark}
+
+\section{Ordered Field}
+
+\begin{definition}[Ordered Ring]\label{def: ordered_ring}
+    A ring \(R\) with an ordered \(\leq\) is called an \textbf{ordered ring} if the following holds:
+    \begin{itemize}
+        \item (\(R, \leq\)) is totally ordered. 
+        \item \(x < y \Rightarrow  x + z < y + z, z \in R\)
+        \item \(x, y > 0 \Rightarrow  xy>0\)
+    \end{itemize}
+\end{definition}
+
+\begin{note}
+    This leads to a series of basic arithmetic rules. \par 
+    We may define absolute value function from \(K \mapsto K\). 
+\end{note}
+
+\begin{proposition}
+    Let \(K\) be an ordered field and \(x, y, a, \epsilon \in K \) with \(\epsilon > 0\). 
+    \begin{enumerate}[label=(\roman*)]
+        \item \(x = |x|\text{sign}\left(x\right)\), \(|x| = x\text{sign}\left(x\right)\)
+        \item \(|x| = |- x|, x \leq |x|\)
+        \item \(|xy| = |x||y|\)
+        \item \(|x| \geq 0\) and (\(|x| = 0 \Leftrightarrow x = 0\))
+        \item \(|x - a| < \epsilon \leftrightarrow a - \epsilon < x < a + \epsilon \)
+        \item \(|x + y| \leq |x| + |y|\) (\textbf{triangular inequality})
+    \end{enumerate}
+\end{proposition}
+
+\begin{corollary}[reversed triangular inequality]\label{cor: reversed_tri_inequality}
+    In any ordered field \(K\) we have
+    \[
+        |x - y| \geq \left | \left | x \right | - \left | y \right | \right |, \:\:\:\:\: x,y \in K.  
+    \]
+\end{corollary}
+
+
+\section{Formal Power Series}
+
+\begin{definition}[formal power series]\label{def: formal_power_series}
+    Let \(R\) be a nontrivial ring with unity. On the set \(R^{\mathbb{N}} = \text{Funct}\left(\mathbb{N}, R\right)\)
+    define addition by 
+    \[
+        (p + q)_n \coloneqq p_n + q_n, \:\:\:\:\:\:\: n \in \mathbb{N},    
+    \]
+    and multiplication by \textbf{convolution},
+    \[
+        (pq)_n \coloneqq (p \cdot q)_n \coloneqq \sum_{j=0}^n p_j q_{n-1} = p_0q_n + p_1q_{n-1}+ \cdots + p_nq_0
+    \]
+    for \(n \in \mathbb{N}\). Here \(p_n\) denotes the value of \(p \in R^\mathbb{N}\) at \(n \in \mathbb{N}\) and is 
+    called the \(n^{\text{th}}\) \textbf{coefficient} of \(p\). In this situation an element \(p \in R^\mathbb{N}\) is 
+    called a \textbf{formal power series over} \(R\), and we set \(R \left[  X \right] \coloneqq \left(R^\mathbb{N}, +, \cdot\right) \)
+    
+\end{definition}
+
+\begin{proposition}
+    \(R \left[ X \right] \) is a ring with unity, the \textbf{formal power series ring over} \(R\). 
+    If \(R\) is commutative, then so is \(R \left[X\right]\)
+\end{proposition}
+
+\section{Polynomials}
+
+\begin{definition}[Polynomial]\label{def: polynomials}
+    A \textbf{polynomial over} \(R\) is a formal power seres \(p \in R \left[X\right]\)
+    such that \( \{n; p_n \neq 0 \} \) is finite, in other words, \(p_n = 0\) "almost everywhere". 
+\end{definition}

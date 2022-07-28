@@ -1,0 +1,48 @@
+\chapter{Vector Spaces, Affine Spaces and Algebras}
+
+
+\section{Vector Spaces}
+
+\begin{definition}[Vector Space]\label{def: vec_space}
+    A \textbf{vector space over the field} \(K\) (or simply, a \(K\)\textbf{-vector space})
+    is a triple (\(V, +, \cdot\)) consisting of a nonempty set \(V\), an 'inner' operation
+    + on \(V\) called \textbf{addition}, and an 'outer' operation 
+    \[
+        K \times V \rightarrow V, \:\:\:\: (\lambda, v) \mapsto \lambda \cdot v,
+    \]
+    called \textbf{scalar multiplication} which satisfy the following axioms:
+    \begin{itemize}
+        \item (\(V, +\)) is an Abelian group 
+        \item The distributive law holds:
+        \[
+            \lambda \cdot (v + w) = \lambda \cdot v + \lambda \cdot w, (\lambda + u) 
+            \cdot v = \lambda \cdot v + \mu \cdot v, \:\:\:\: \lambda, \mu \in K, \:\:\: v, w \in V
+        \]
+        \item \(\lambda \cdot \left(\mu v\right) = \left(\lambda \mu\right) \cdot v\), \(1 \cdot v = v\)
+        for \(\lambda, \mu \in K, v \in V\)
+    \end{itemize}
+    A vector space is called \textbf{real} if \(K = \mathbb{R}\) and \textbf{complex} if \(K = \mathbb{C}\).
+\end{definition}
+
+
+\begin{note}[Linear Functions]
+    Let \(V\) and \(W\) be vector spaces over \(K\). THen a function \(T \colon V \mapsto W\)
+    is (\(K-\))\textbf{linear} if 
+    \[
+        T(\lambda v + \mu w) = \lambda T(v) + \mu T(w), \:\:\:\:\: \lambda, \mu \in K, \:\: v, w \in V
+    \]
+    In this regard, a linear function is simply a function which is compatible with the vector
+    space operations, in other words, it is a (\textbf{vector space}) \textbf{homomorphism}.
+    The set of all linear functions from \(V\) to \(W\) is denoted by Hom(\(V, W\)) or
+    \(\text{Hom}_K\left(V, W\right)\), and End(\(V\)) \(\coloneqq\) Hom(\(V,V\)) is the set of
+    all (vector space) \textbf{endomorphisms}. A bijective homomorphism \(T \in \) Hom(\(V, W\))
+    is a (vector space) \textbf{isomorphism}.  
+\end{note}
+
+\begin{remark}
+    \begin{enumerate}[label = (\alph*)]
+        \item A vector space homomorphism \(T \colon V \mapsto W\) is, in particular, 
+        a group homomorphism \(T \colon \left(V, +\right) \mapsto \left(W, +\right)\). 
+        \item 
+    \end{enumerate}
+\end{remark}

@@ -1,0 +1,35 @@
+\chapter{Normed Vector Space}
+
+\section{Norms}
+
+\begin{definition}[Norm]\label{def: norm}
+    Let \(E\) be a vector space over \(\mathbb{K}\). A function \(|| \cdot || \colon E \to
+    \mathbb{R}^+\) is called a \textbf{norm} if the following hold:
+    \begin{itemize}
+        \item \( || x || = 0 \Leftrightarrow x = 0\). 
+        \item \( || \lambda x|| = |\lambda| || x || \), \(x \in E\), \(\lambda \in \mathbb{K}\)
+        (positive homogeneity)
+        \item \( || x + y || \leq || x || + || y ||\), \(x, y \in E\) (triangle inequality).
+        A pair (\(E, ||\cdot||\)) consisting of a vector space \(E\) and a norm
+        \(||\cdot||\) is called a \textbf{normed vector space}. If the norm is clear from context,
+        we write \(E\) instead of (\(E, || \cdot||\)).  
+    \end{itemize}
+\end{definition}
+
+\begin{remark}
+    Let \(E \coloneqq \left(E, ||\cdot||\right)\) be a normed vector space. 
+    \begin{enumerate}[label=(\alph*)]
+        \item The function 
+        \[
+            d \colon E \times E \to \mathbb{R}^+ , \:\:\:\:\: (x, y) \mapsto ||x-y||  
+        \]
+        is a metric on \(E\), the \textbf{metric induced from the norm}. Hence any 
+        normed vector space is also a metric space. 
+        \item The \textbf{reversed triangle inequality} holds for the norm:
+        \[
+            || x - y || \geq \left |  || x || - || y ||  \right |, \:\:\:\: x,y \in E  
+        \]
+
+        \item All statements from previous chapter also hold in normed vector space. 
+    \end{enumerate}
+\end{remark}

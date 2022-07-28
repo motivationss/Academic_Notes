@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber master"] 1658972050 "master.bcf" "master.bbl" "master" 1658973849
-  "master.bcf" 1658973849 107079 f9911133cd0597fa68874376d1af1bbf "pdflatex"
+["biber master"] 1658972050 "master.bcf" "master.bbl" "master" 1658989757
+  "master.bcf" 1658989757 107079 f9911133cd0597fa68874376d1af1bbf "pdflatex"
   (generated)
   "master.bbl"
   "master.blg"
-["pdflatex"] 1658973845 "/Users/gaotangli/Desktop/Analysis_note/master.tex" "master.pdf" "master" 1658973849
+["pdflatex"] 1658989753 "/Users/gaotangli/Desktop/Analysis_note/master.tex" "master.pdf" "master" 1658989757
   "/Users/gaotangli/Desktop/Analysis_note/master.tex" 1658972526 1583 9c6c4796f26e8533cd385ce0ffce57e0 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -365,15 +365,15 @@
   "Chapters/ch3_reals.tex" 1658640171 4735 b0ef6cba073b97e15c2bfe26447944c9 ""
   "Chapters/ch4_vecspace.tex" 1658719671 2250 b1d162387f803dbaa0d7c9917acae281 ""
   "Chapters/ch5_convergence_of_seq.tex" 1658972452 9076 8ee6b315b229dc5434afc599a6d4d431 ""
-  "Chapters/ch6_normed_vectorspace.tex" 1658973841 1525 2b30b6fe605eab8e39601ff6db1186a2 ""
+  "Chapters/ch6_normed_vectorspace.tex" 1658989748 4456 ebbb36cc0f5eb4ddd27df48d4aaaf664 ""
   "Math.tex" 1658466065 2382 ca2b9be536fdb625ce67873804064cfc ""
   "header.tex" 1658553282 10669 fbe58234deb7c948c2820883f32a92cf ""
-  "master.aux" 1658973849 23162 9371f5824dab9bcd35bced9ed818e96c "pdflatex"
+  "master.aux" 1658989757 23575 f9f501698ff9ae3ff6c83dd5fceb5fb2 "pdflatex"
   "master.bbl" 1658972056 466 ee04f40f768daeed26442158e95aba61 "biber master"
-  "master.out" 1658973849 3408 23798437e2979bec24fb8da7b16d3c6a "pdflatex"
-  "master.run.xml" 1658973849 2318 54cfa3ba94777505e137b706f4dd1953 "pdflatex"
+  "master.out" 1658989757 3408 23798437e2979bec24fb8da7b16d3c6a "pdflatex"
+  "master.run.xml" 1658989757 2318 54cfa3ba94777505e137b706f4dd1953 "pdflatex"
   "master.tex" 1658972526 1583 9c6c4796f26e8533cd385ce0ffce57e0 ""
-  "master.toc" 1658973849 1864 fdebe4d4d31f235ddf457782fc4d31c1 "pdflatex"
+  "master.toc" 1658989757 1864 fdebe4d4d31f235ddf457782fc4d31c1 "pdflatex"
   (generated)
   "master.aux"
   "master.bcf"

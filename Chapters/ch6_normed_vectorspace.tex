@@ -33,3 +33,73 @@
         \item All statements from previous chapter also hold in normed vector space. 
     \end{enumerate}
 \end{remark}
+
+\subsection*{Balls}
+
+For \(a \in E\) and \(r > 0\), we define the \textbf{open} and \textbf{closed balls} with
+center at \(a\) and radius \(r\) by 
+\[
+   \mathbb{B}_E (a, r) \coloneqq \mathbb{B} (a, r) \coloneqq {x \in E; || x - a || < r}  
+\]
+and 
+\[
+  \bar{\mathbb{B}}_E (a, r) \coloneqq \bar{\mathbb{B}}_E \coloneqq {x\in E ; || x - a|| \leq r}.  
+\]
+
+These definitions agree with those for the metric space (\(E, d\)) when \(d\) is induced
+from norm. We also write
+\[
+  \mathbb{B} \coloneqq \mathbb{B}(0, 1) = {x\in E; ||x|| < 1} \:\:\:\:\: \text{and}
+  \:\:\:\:\: \bar{\mathbb{B}} \coloneqq \bar{\mathbb{B}}(0, 1) = {x \in E; ||x|| \leq 1}  
+\]
+for the \textbf{open} and \textbf{closed unit balls} in \(E\). We have
+\[
+    r\mathbb{B} = \mathbb{B}(0, r), \:\:\: r\bar{\mathbb{B}} = \bar{\mathbb{B}}(0, r)  
+\]
+
+\subsection*{Bounded Sets}
+
+A subset \(X\) of \(E\) is called \textbf{bounded in} \(E\) (or \textbf{norm bounded}) if 
+it is bounded in the induced metric space.
+
+\begin{remark}
+    Let \(E \coloneqq \left(E, ||\cdot||\right)\) be a normed vector space 
+    \begin{enumerate}[label=(\alph*)]
+        \item \(X \subseteq E\) is bounded if and only if there is some \(r > 0\) such
+        that \(X \subseteq r\mathbb{B}\), that is, \(||x|| < r\) for all \(x\in X\). 
+        \item If \(X\) and \(Y\) are nonempty bounded subsets of \(E\), then so are
+        \(X \cup Y \), \(X + Y\) and \(\lambda X\) with \(\lambda \in \mathbb{K}\). 
+    \end{enumerate}
+\end{remark}
+
+\begin{eg}
+    \begin{enumerate}[label=(\alph*)]
+        \item The absolute value \(|\cdot|\) is a norm on the vector space \(\mathbb{K}\). 
+        \item Let \(F\) be a subspace of a normed vector space 
+        \(E \coloneqq \left(E, \lVert \cdot \rVert \right)\). Then the restriction 
+        \(\lVert \cdot \rVert_F \coloneqq  \lVert \cdot \rVert | F\) of 
+        \(\lVert \cdot \rVert\) to \(F\) is a norm on \(F\). Thus 
+        \(F \coloneqq \left(F, \lVert \cdot \rVert_F\right)\) is a normed vector space 
+        with this \textbf{induced norm}. 
+        \item Let \(E_j, \lVert \cdot \rVert_j\), \(1 \leq j \leq m\), be normed vector 
+        space over \(\mathbb{K}\). Then
+
+        \[
+            \lVert x \rVert_\infty \coloneqq \displaystyle{\text{max}_{1\leq j\leq m}}
+            \lVert x_j \rVert_j, \:\:\:\:\:\:\:\: x = (x_1,\ldots,x_m) \in E \coloneqq
+            E_1 \times \cdots \times E_m   
+        \]
+        defines a norm, called the \textbf{product norm}, on the product vector space 
+        \(E\). The metric on \(E\) induced from this norm coincides with the product metric
+        from 5.2 example (d), where \(d_j\) is the metric induced on \(E_j\) from 
+        \(\lVert \cdot \rVert_j\). 
+        \item For \(m \in \mathbb{N}^\times, \mathbb{K}^m \) is a normed vector space
+        with the \textbf{maximum norm}
+        \[
+            |x|_\infty \coloneqq     
+        \] 
+    \end{enumerate}
+\end{eg}
+
+
+

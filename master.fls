@@ -1891,6 +1891,10 @@ INPUT ./Chapters/ch6_normed_vectorspace.tex
 INPUT Chapters/ch6_normed_vectorspace.tex
 INPUT ./Chapters/ch6_normed_vectorspace.tex
 INPUT Chapters/ch6_normed_vectorspace.tex
+INPUT ./Chapters/ch7_monotone_seq.tex
+INPUT Chapters/ch7_monotone_seq.tex
+INPUT ./Chapters/ch7_monotone_seq.tex
+INPUT Chapters/ch7_monotone_seq.tex
 INPUT master.aux
 INPUT ./master.out
 INPUT ./master.out
@@ -1903,6 +1907,7 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb

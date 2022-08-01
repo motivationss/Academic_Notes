@@ -96,10 +96,215 @@ it is bounded in the induced metric space.
         \item For \(m \in \mathbb{N}^\times, \mathbb{K}^m \) is a normed vector space
         with the \textbf{maximum norm}
         \[
-            |x|_\infty \coloneqq     
+            |x|_\infty \coloneqq  \text{max}_{1 \leq j \leq m} |x_j|, \:\:\:\:\:\:
+            x = (x_1,\ldots, x_m) \in \mathbb{K}^m.   
         \] 
+        In this case m = 1. 
     \end{enumerate}
 \end{eg}
 
+\section{The Space of Bounded Functions}
 
+Let \(X\) be a nonempty set and (\(E, \lVert \cdot \rVert\)) a normed vector space. A function
+\(u \in E^X\) is called \textbf{bounded} if the image of \(u\) in \(E\) is bounded. For 
+\(u \in E^X\), define 
+\[
+    \lVert u \rVert_\infty \coloneqq \lVert u \rVert_{\infty,X} \coloneqq 
+    \displaystyle{\text{sup}_{x\in X}} \lVert u(x) \rVert \in \mathbb{R}^+ \cup {\infty}
+\]
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item For \(u \in E^X\), the followings are equivalent:
+        \begin{enumerate}[label=(\roman*)]
+            \item \(u\) is bounded. 
+            \item \(u\left(X\right)\) is bounded in \(E\). 
+            \item There is some \(r > 0\) such that \(\lVert u\left(x\right) \rVert \leq r\)
+            for all \(x \in X\). 
+            \item \(\lVert u \rVert_\infty < \infty\). 
+        \end{enumerate}
+        \item Clearly id \(\in \mathbb{K}^\mathbb{K}\) is not bounded, that is, 
+        \(\lVert \text{id} \rVert_\infty = \infty\). 
+    \end{enumerate}
+    (b) shows that \(\lVert \cdot \rVert_\infty \) may not be a norm on the vector space
+    \(E^X\) when \(E\) is not trivial. We therefore set
+    \[
+        B(X,E) \coloneqq {u \in E^X \: ; \: u \: \text{ is bounded}}  
+    \]
+    and call \(B\left(X, E\right)\) the \textbf{space of bounded functions} from \(X\) to \(E\). 
+\end{remark}
+
+\begin{proposition}
+    \(B\left(X, E\right)\) is a subspace of \(E^X\) and \(\lVert \cdot \rVert_\infty \) is a norm,
+    called the \textbf{supremum norm}, on \(B\left(X, E\right)\). 
+\end{proposition}
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item If \(X\coloneqq \mathbb{N}\), then \(B\left(X, E\right)\) is the normed vector
+        space of bounded sequences in \(E\). In the special case \(E\coloneqq \mathbb{K}\),
+        \(B\left(\mathbb{N}, \mathbb{K}\right)\) is denoted by \(\ell_\infty\), that is, 
+        \[
+            \ell_\infty \coloneqq \ell\infty(\mathbb{K}) \coloneqq B(\mathbb{N}, \mathbb{K}) 
+        \]
+        is the normed \textbf{vector space of bounded sequences} with the supremum norm
+        \[
+            \lVert (x_n) \rVert_\infty = \displaystyle\text{sup}_{n\in \mathbb{N}} \lvert x_n \rvert
+            , \:\:\:\:\: (x_n) \in \ell_\infty  
+        \]
+        \item If \(X = \{1,\ldots,m\}\) for some \(m \in \mathbb{N}^\times\), then
+        \[
+            B(X,E) = (E^m, \lVert \cdot \rVert_\infty)  
+        \]
+    \end{enumerate}
+\end{remark}
+
+\section{Inner Product Spaces}
+
+\begin{definition}[Inner Product Space]\label{def: inner_product}
+    Let \(E\) be a vector space over the filed \(\mathbb{K}\). A function
+    \[
+        (\cdot | \cdot) \colon E \times E \to \mathbb{K}, \:\:\:\: (x, y) \mapsto (x|y)  
+    \]
+    is called a \textbf{scalar product} or \textbf{inner product} on \(E\) if the following
+    hold:
+    \begin{itemize} 
+        \item (\(x|y\)) = \(\overline{\left(y|x\right)}\), \(x, y\in E\)
+        \item (\(\lambda x + \mu y | z\)) = \(\lambda\left(x|z\right) + \mu\left(y|z\right)\), 
+        \(x, y, z \in E\), \(\lambda, \mu \in \mathbb{K}\). 
+        \item (\(x|x\)) \(\geq\) 0, \(x \in E\), and \(\left(x|x\right) = 0 \Leftrightarrow 0\). 
+    \end{itemize}
+    A vector space \(E\) with a scalar product \(\left(\cdot|\cdot\right)\) is called 
+    an \textbf{inner product space} and is written in \(\left(E, \left(\cdot|\cdot\right)\right)\). 
+\end{definition}
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item In the real case \(\mathbb{K} = \mathbb{R}\), the first point can be written as
+        \[
+            (x|y) = (y|x), \:\:\:\: x, y \in E  
+        \]
+        In other words, the function is \textbf{symmetric} when \(E\) is a real vector space.
+        In the case \(\mathbb{K} = \mathbb{C}\), the function is said to be \textbf{Hermitian}
+        when the first point holds. 
+        \item From the first two points it follows that
+        \[
+            (x|\lambda y + \mu z) = \bar{\lambda}(x|y) + \bar{\mu}(x|z), \:\:\:\:
+            x,y,z \in E, \:\:\:\: \lambda,\mu \in \mathbb{K},     
+        \]
+        that is, for each fixed \(x \in E\), the function \(\left(x|\cdot\right)\colon E \to \mathbb{K}\)
+        is \textbf{conjugate linear}. If \(\mathbb{K} = \mathbb{R}\), it is \textbf{bilinear}. 
+
+        \item (\(x|0\)) = 0 for all \(x \in E\). 
+    \end{enumerate}
+
+\end{remark}
+
+Let \(m \in \mathbb{N}^\times\). For \(x = \left(x_1,\ldots,x_m\right)\) and 
+\(y = \left(y_1,\ldots,y_m\right)\) in \(\mathbb{K}^m\), define
+\[
+    (x|y) \coloneqq \sum^m_{j=1} x_j \bar{y}_j   
+\]
+to be the \textbf{Euclidean Inner product} on \(\mathbb{K}^m\). 
+
+\subsection*{The Cauchy-Schwarz Inequality}
+
+\begin{theorem}[Cauchy-Schwarz Inequality]\label{theorem: Cauchy-Schwarz}
+    Let (\(E, \left(\cdot|\cdot\right)\)) be an inner product space. Then
+    \[
+        \lvert (x|y) \rvert^2  \leq (x|x)(y|y) \:\:\:\:\:\: x,y \in E   
+    \]
+    and the equality occurs if and only if \(x\) and \(y\) are linearly independent.
+\end{theorem}
+
+\begin{theorem}
+    Let (\(E, \left(\cdot|\cdot\right)\)) be an inner product space and 
+    \[
+        \lVert x \rVert \coloneqq \sqrt{(x|x)}, \:\:\:\:\:\: x\in E  
+    \]
+    Then \(\lVert \cdot \rVert\) is a norm on \(E\), the \textbf{norm induced from
+    the scalar product} (\(\cdot | \cdot\)). 
+    A norm which is induced from a scalar product is also called a \textbf{Hilbert norm}. 
+\end{theorem}
+
+\begin{corollary}
+    Let (\(E, \left(\cdot|\cdot\right)\)) be an inner product space. Then
+    \[
+        \lvert (x|y) \rvert \leq \lVert x \rVert \lVert y\rVert \:\:\:\:\:\: x,y \in E
+    \]
+\end{corollary}
+
+\section{Euclidean Spaces}
+
+Convention: Unless otherwise stated, we consider \(\mathbb{K}^m\) to be endowed with 
+the Euclidean inner product (\(\cdot|\cdot\)) and the induced norm
+\[
+    \lvert x \rvert \coloneqq \sqrt{(x|x)} = \sqrt{\sum^m_{j=1}\lvert x_j\rvert^2}
+    \:\:\:\:\:\: x = (x_1,\ldots,x_m) \in \mathbb{K}^m 
+\]
+the \textbf{Euclidean norm}. In the real case, we write also \(x \cdot y\) for (\(x|y\)). 
+
+We further define the norm 
+\[
+    \lvert x \rvert_1 \coloneqq \sum^m_{j=1} \lvert x_j \rvert , \:\:\:\:\: x = (x_1,\ldots,x_m)\in \mathbb{K}^m  
+\]
+\begin{proposition}
+    Let \(m \in \mathbb{N}^\times\). Then 
+    \[
+        \lvert x \rvert_\infty \leq \lvert x \rvert \leq \sqrt{m} \lvert x \rvert_\infty
+        , \:\:\:\:\:\:\:\:\:\: \frac{1}{\sqrt{m}}\lvert x \rvert_1 \leq \lvert x \rvert
+        \leq \lvert x \rvert_1, \:\:\:\:\:\: x \in \mathbb{K}^m   
+    \]
+\end{proposition}
+
+\subsection*{Equivalent Norm}
+
+Let \(E\) be a vector space. Two norms \(\lVert \cdot \rVert_1\) and \(\lVert \cdot \rVert_2\)
+on \(E\) are \textbf{equivalent} if there is some \(K \geq 1\) such that 
+\[
+    \frac{1}{K} \lVert x \rVert_1 \leq \lVert x \rVert_2 \leq K \lVert x \rVert_1 , \:\:\:\: x\in E
+\]
+
+In this case we write \(\lVert \cdot \rVert_1 ~ \lVert \cdot \rVert_2\). 
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item \(~\) is an equivalence relation on the set of all norms of a fixed vector space. 
+        \item \(\lVert \cdot \rVert_1 ~ \lVert \cdot \rVert ~ \lVert \cdot \rVert_\infty\) 
+        on \(\mathbb{K}^m\). 
+        \item We write \(\mathbb{B}^m\) for the \textbf{real open Euclidean unit ball},
+        that is, \(\mathbb{B}^m \coloneqq \mathbb{B}_{\mathbb{R}^m}\) and 
+        \(\mathbb{B}^m_1\) and \(\mathbb{B}^m_\infty\) for the unit balls in 
+        (\(\mathbb{R}^m, \lvert \cdot \rvert_1\)) and in (\(\mathbb{R}^m, \lvert \cdot \rvert_\infty\))
+        respectively. We have
+        \[
+          \mathbb{B}^m \subseteq \mathbb{B}^m_\infty \subseteq \sqrt{m}\mathbb{B}^m
+          \:\:\:\:\:\:\:
+          \mathbb{B}^m_1 \subseteq \mathbb{B}^m \subseteq \sqrt{m}\mathbb{B}^m_1
+        \]
+
+        \item Let \(E = \left(E, \lVert \cdot \rVert \right)\) be a normed vector space
+        and \(\lVert \cdot \rVert_1\) a norm on \(E\) which is equivalent to
+        \(\lVert \cdot \rVert\). Set \(E_1 \coloneqq \left(E, \lVert \cdot \rVert_1\right)\). 
+        Then 
+        \[
+            \mathcal{U}_E(a) = \mathcal{U}_{E_1}(a), \:\:\:\:\:\:\: a \in E  
+        \]
+        that is, the set of neighborhoods of \(a\) depends only on the equivalence class
+        of the norm. Equivalent norms produce the same set of neighborhoods. 
+    \end{enumerate}
+\end{remark}
+
+\subsection*{Convergence in Product Spaces}
+
+\begin{proposition}
+    Let \(m \in \mathbb{N}^\times\) and \(x_n = \left(x^1_n, \ldots, x^m_n\right) \in \mathbb{K}^m\)
+    for \(n \in \mathbb{N}\). Then the followings are equivalent:
+    \begin{enumerate}
+        \item The sequence \(\left(x_n\right)_{n\in \mathbb{N}}\) converges to 
+        \(x = \left(x^1, \ldots, x^m\right)\) in \(\mathbb{K}^m\). 
+        \item For each \(k \in \{1, \ldots, m\}\), the sequence \(\left(x^k_n\right)_{n\in\mathbb{N}}\)
+        converges to \(x^k\) in \(\mathbb{K}\). 
+    \end{enumerate}
+\end{proposition}
 

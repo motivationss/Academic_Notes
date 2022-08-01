@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber master"] 1658972050 "master.bcf" "master.bbl" "master" 1658989757
-  "master.bcf" 1658989757 107079 f9911133cd0597fa68874376d1af1bbf "pdflatex"
+["biber master"] 1659319083 "master.bcf" "master.bbl" "master" 1659321998
+  "master.bcf" 1659321998 107079 f9911133cd0597fa68874376d1af1bbf "pdflatex"
   (generated)
   "master.bbl"
   "master.blg"
-["pdflatex"] 1658989753 "/Users/gaotangli/Desktop/Analysis_note/master.tex" "master.pdf" "master" 1658989757
-  "/Users/gaotangli/Desktop/Analysis_note/master.tex" 1658972526 1583 9c6c4796f26e8533cd385ce0ffce57e0 ""
+["pdflatex"] 1659321994 "/Users/gaotangli/Desktop/Analysis_note/master.tex" "master.pdf" "master" 1659321998
+  "/Users/gaotangli/Desktop/Analysis_note/master.tex" 1659321989 1621 07afe2197365142b043307bfdd89bd2e ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -76,6 +76,7 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
@@ -365,15 +366,16 @@
   "Chapters/ch3_reals.tex" 1658640171 4735 b0ef6cba073b97e15c2bfe26447944c9 ""
   "Chapters/ch4_vecspace.tex" 1658719671 2250 b1d162387f803dbaa0d7c9917acae281 ""
   "Chapters/ch5_convergence_of_seq.tex" 1658972452 9076 8ee6b315b229dc5434afc599a6d4d431 ""
-  "Chapters/ch6_normed_vectorspace.tex" 1658989748 4456 ebbb36cc0f5eb4ddd27df48d4aaaf664 ""
+  "Chapters/ch6_normed_vectorspace.tex" 1659321319 13559 8be60b29d5b7ce80d824b6936ea22693 ""
+  "Chapters/ch7_monotone_seq.tex" 1659321989 27 b7a48a69814448aa6427bdeffd6151bc ""
   "Math.tex" 1658466065 2382 ca2b9be536fdb625ce67873804064cfc ""
-  "header.tex" 1658553282 10669 fbe58234deb7c948c2820883f32a92cf ""
-  "master.aux" 1658989757 23575 f9f501698ff9ae3ff6c83dd5fceb5fb2 "pdflatex"
-  "master.bbl" 1658972056 466 ee04f40f768daeed26442158e95aba61 "biber master"
-  "master.out" 1658989757 3408 23798437e2979bec24fb8da7b16d3c6a "pdflatex"
-  "master.run.xml" 1658989757 2318 54cfa3ba94777505e137b706f4dd1953 "pdflatex"
-  "master.tex" 1658972526 1583 9c6c4796f26e8533cd385ce0ffce57e0 ""
-  "master.toc" 1658989757 1864 fdebe4d4d31f235ddf457782fc4d31c1 "pdflatex"
+  "header.tex" 1659302155 10727 cb096fbff026fac9a0792a2d58be20f2 ""
+  "master.aux" 1659321998 26911 139347d553b52bd527d16b84913bc1fe "pdflatex"
+  "master.bbl" 1659319084 466 ee04f40f768daeed26442158e95aba61 "biber master"
+  "master.out" 1659321998 4062 f42ecebb71678eb8323b155ff02bbf13 "pdflatex"
+  "master.run.xml" 1659321998 2318 54cfa3ba94777505e137b706f4dd1953 "pdflatex"
+  "master.tex" 1659321989 1621 07afe2197365142b043307bfdd89bd2e ""
+  "master.toc" 1659321998 2187 cbb6f2fc644044edc6dde20156585849 "pdflatex"
   (generated)
   "master.aux"
   "master.bcf"

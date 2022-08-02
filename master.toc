@@ -26,4 +26,9 @@
 \contentsline {section}{\numberline {6.2}The Space of Bounded Functions}{19}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Inner Product Spaces}{20}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Euclidean Spaces}{21}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Monotone Sequence}{23}{chapter.7}%
+\contentsline {chapter}{\numberline {7}Infinite Limits}{23}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Convergence to \(\pm \infty \)}{23}{section.7.1}%
+\contentsline {section}{\numberline {7.2}The Limit Superior and Limit Inferior}{23}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Completeness}{25}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Cauchy Sequences}{25}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Banach Spaces}{25}{section.8.2}%

@@ -1,0 +1,55 @@
+\chapter{Completeness}
+
+\section{Cauchy Sequences}
+
+In the following \(X = \left(X, d\right)\) is a metric space. 
+
+A sequence (\(x_n\)) in \(X\) is called a \textbf{Cauchy sequence} if, for 
+each \(\epsilon > 0\), there is some \(N \in \mathbb{N}\) such that 
+\(d\left(x_n, x_m\right) < \epsilon\) for all \(m, n \geq N\). 
+
+Similarly, if (\(x_n\)) is a sequence in a normed vector space \(E = \left(E, \lVert \cdot \rVert\right)\),
+then (\(x_n\)) is a Cauchy sequence if and only if for each \(\epsilon > 0\) there is 
+some \(N\) such that \(\lVert x_n - x_m \rVert < \epsilon\) for all \(m, n \geq N\). In 
+particular, Cauchy sequences in \(E\) are "translation invariant", that is, if (\(x_n\))
+is a Cauchy sequence and \(a\) is an arbitrary vector in \(E\), then the 'translated'
+sequence (\(x_n + a\)) is also a Cauchy sequence. This implies that Cauchy sequences
+cannot be defined using neighborhoods. 
+
+\begin{proposition}
+    Every convergent sequence is a Cauchy sequence. 
+\end{proposition}
+
+\begin{proposition}
+    Every Cauchy sequence is bounded. 
+\end{proposition}
+
+\begin{proposition}
+    If a Cauchy sequence has a convergent subsequence, then it is itself convergent. 
+\end{proposition}
+
+\section{Banach Spaces}
+
+A metric space \(X\) is called \textbf{complete} if every Cauchy sequence in \(X\)
+converges. A complete normed vector space is called a \textbf{Banach space}. 
+
+\begin{theorem}
+    \(\mathbb{K}^m\) is a Banach space. 
+\end{theorem}
+
+\begin{theorem}
+    Let \(X\) be a nonempty set and \(E = \left(E, \lVert \cdot \rVert\right)\)
+    a Banach space. Then \(B\left(X, E\right)\) is also a Banach space. 
+\end{theorem}
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item A direct consequence of the previous two theorems is that For every 
+        nonempty set \(X\), \(B\left(X, \mathbb{R}\right)\), \(B\left(X, \mathbb{C}\right)\),
+        and \(B\left(X, \mathbb{K}^m\right)\) are Banach spaces.
+        \item The completeness of a normed vector space \(E\) is invariant under changes
+        to equivalent norms. 
+        \item A complete inner product space is called a \textbf{Hilbert space}. 
+    \end{enumerate}
+\end{remark}
+

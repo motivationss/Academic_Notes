@@ -1910,6 +1910,10 @@ INPUT ./Chapters/ch8_completeness.tex
 INPUT Chapters/ch8_completeness.tex
 INPUT ./Chapters/ch8_completeness.tex
 INPUT Chapters/ch8_completeness.tex
+INPUT ./Chapters/ch9_continuity.tex
+INPUT Chapters/ch9_continuity.tex
+INPUT ./Chapters/ch9_continuity.tex
+INPUT Chapters/ch9_continuity.tex
 INPUT master.aux
 INPUT ./master.out
 INPUT ./master.out

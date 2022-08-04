@@ -1,34 +1,40 @@
-\contentsline {part}{I\hspace {1em}Foundations}{2}{part.1}%
-\contentsline {chapter}{\numberline {1}Groups and Homomorphism}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Basics}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Subgroup}{4}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Cosets}{4}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Homomorphisms}{5}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Rings, Fields and Polynomials}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Rings}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Consequence of Ring Definitions}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Field}{8}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Ordered Field}{9}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Formal Power Series}{9}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Polynomials}{10}{section.2.6}%
-\contentsline {chapter}{\numberline {3}The Real Numbers}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Order Completeness}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The Consequence of Order Completeness}{12}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Vector Spaces, Affine Spaces and Algebras}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Vector Spaces}{13}{section.4.1}%
-\contentsline {part}{II\hspace {1em}Convergence}{14}{part.2}%
-\contentsline {chapter}{\numberline {5}Convergence of Sequences}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Sequences}{15}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Metric Space}{15}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Convergence}{16}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Normed Vector Space}{18}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Norms}{18}{section.6.1}%
-\contentsline {section}{\numberline {6.2}The Space of Bounded Functions}{19}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Inner Product Spaces}{20}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Euclidean Spaces}{21}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Infinite Limits}{23}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Convergence to \(\pm \infty \)}{23}{section.7.1}%
-\contentsline {section}{\numberline {7.2}The Limit Superior and Limit Inferior}{23}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Completeness}{25}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Cauchy Sequences}{25}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Banach Spaces}{25}{section.8.2}%
+\contentsline {part}{I\hspace {1em}Foundations}{3}{part.1}%
+\contentsline {chapter}{\numberline {1}Groups and Homomorphism}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Basics}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Subgroup}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Cosets}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Homomorphisms}{6}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Rings, Fields and Polynomials}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Rings}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Consequence of Ring Definitions}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Field}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Ordered Field}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Formal Power Series}{10}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Polynomials}{11}{section.2.6}%
+\contentsline {chapter}{\numberline {3}The Real Numbers}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Order Completeness}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Consequence of Order Completeness}{13}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Vector Spaces, Affine Spaces and Algebras}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Vector Spaces}{14}{section.4.1}%
+\contentsline {part}{II\hspace {1em}Convergence}{15}{part.2}%
+\contentsline {chapter}{\numberline {5}Convergence of Sequences}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Sequences}{16}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Metric Space}{16}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Convergence}{17}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Normed Vector Space}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Norms}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The Space of Bounded Functions}{20}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Inner Product Spaces}{21}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Euclidean Spaces}{22}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Infinite Limits}{24}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Convergence to \(\pm \infty \)}{24}{section.7.1}%
+\contentsline {section}{\numberline {7.2}The Limit Superior and Limit Inferior}{24}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Completeness}{26}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Cauchy Sequences}{26}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Banach Spaces}{26}{section.8.2}%
+\contentsline {part}{III\hspace {1em}Continuous Functions}{27}{part.3}%
+\contentsline {chapter}{\numberline {9}Continuity}{28}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Elementary Properties and Examples}{28}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Sequential Continuity}{29}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Addition and Multiplication of Continuous Functions}{29}{section.9.3}%
+\contentsline {section}{\numberline {9.4}One-Sided Continuity}{30}{section.9.4}%

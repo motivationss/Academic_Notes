@@ -9,3 +9,186 @@ Let \(f \colon X \to Y \) be a function between metric spaces (\(X, d_X\)) and
 neighborhood \(V\) of \(f\left(x_0\right)\) in \(Y\), there is a neighborhood
 \(U\) of \(x_0\) in \(X\) such that \(f\left(U\right) \subseteq V\). 
 
+
+Hence to prove the continuity of \(f\) at \(x_0\), one supposes that an arbitrary 
+neighborhood \(V\) of \(f\left(x_0\right)\) is given and then shows that there is 
+a neighborhood \(U\) of \(x_0\) such that \(f\left(U\right) \subseteq V\), that is,
+\(f\left(x\right) \in V\) for all \(x \in U\). 
+
+
+The function \(f \colon X \to Y\) is \textbf{continuous} if it is continuous at each point
+of \(X\). We say \(f\) is \textbf{discontinuous at} \(x_0\) if \(f\) is not continuous
+at \(x_0\). \(f\) is \textbf{discontinuous} if it is discontinuous at (at least) one point
+of \(X\). The set of all continuous functions from \(X\) to \(Y\) is denoted 
+\(C \left(X, Y\right)\), a subset of \(Y^X\). 
+
+\begin{proposition}
+    A function \(f \colon X \to Y\) is continuous at \(x_0 \in X\) if and only if, for
+    each \(\epsilon > 0\), there is some \(\delta \coloneqq \delta\left(x_0, \epsilon\right) > 0\)
+    with the property that 
+    \begin{center}
+        \(d\left(f\left(x_0\right), f\left(x\right)\right) < \epsilon\) for all 
+        \(x\in X\) such that \(d\left(x_0, x\right) < \delta\)
+    \end{center}
+\end{proposition}
+
+\begin{corollary}
+    Let \(E\) and \(F\) be normed vector spaces and \(X \subseteq E\). Then \(f \colon X \to F\)
+    is continuous at \(x_0 \in X\) if and only if, for each \(\epsilon > 0\), there is 
+    some \(\delta \coloneqq \delta\left(x_0, \epsilon\right) > 0\) satisfying that 
+    \[
+        \lVert f(x) - f(x_0) \rVert_F < \epsilon \:\:\:\:\: \text{for all } x \in X 
+        \:\:\:\: \text{such that } \lVert x - x_0 \rVert_E < \delta 
+    \]
+\end{corollary}
+
+\begin{eg}
+    In the following examples, \(X\) and \(Y\) are metric spaces. 
+    \begin{enumerate}[label=(\alph*)]
+        \item The square root function \(\mathbb{R}^+ \to \mathbb{R}^+\), \(x \to \sqrt{x}\)
+        is continuous. 
+        \item The floor function \(\lfloor \cdot \rfloor \colon \mathbb{R} \to \mathbb{R}\),
+        \(x \to \lfloor x \rfloor \coloneqq \text{max}\{k\in \mathbb{Z}; k \leq x\}\) is 
+        continuous at \(x_0 \in \mathbb{R} \backslash \mathbb{Z} \) and discontinuous at 
+        \(x_0 \in \mathbb{Z}\). 
+        
+        \item The \textbf{Dirichlet function } \(f \colon \mathbb{R} \to \mathbb{R}\) defined
+        by 
+        \[
+           f(x) \coloneqq \begin{cases}
+                1, & x \in \mathbb{Q}, \\ 
+                0, & x \in \mathbb{R} \backslash \mathbb{Q}, 
+           \end{cases}  
+        \]
+        is nowhere continuous, that is, it is discontinuous at every \(x_0 \in \mathbb{R}\). 
+
+        \item Suppose that \(f \colon X \to \mathbb{R}\) is continuous at \(x_0 \in X\)
+        and \(f\left(x_0\right) > 0\). Then there is a neighborhood \(U\) of \(x_0\) such 
+        that \(f\left(x\right) > 0\) for all \(x \in U\). 
+        \item A function \(f \colon X \to Y\) is \textbf{Lipschitz continuous} with 
+        \textbf{Lipschitz constant } \(\alpha > 0\) if 
+        \[
+           d(f(x), f(y)) \leq \alpha d(x, y), \:\:\:\:\:\:\: x,y \in X
+        \]  
+        Every Lipschitz continuous function is continuous. 
+        \item Any constant function \(X \to Y\), \(x \mapsto y_0\) is Lipschitz continuous. 
+        \item The identity function \(\text{id} \colon X \to X\), \(x \mapsto x\) 
+        is Lipschitz continuous.
+        \item If \(E_1, \ldots, E_m\) are normed vector spaces, then 
+        \(E \coloneqq E_1 \times \cdots \times E_m\) is a normed vector space with 
+        respect to the product norm \(\lVert \cdot \rVert_\infty\). The canonical projections
+        \[
+           \text{pr}_k \colon E \to E_k, \:\:\:\:\: x = (x_1,\ldots,x_m) \mapsto x_k, 
+           \:\:\:\: 1 \leq k \leq m, 
+        \]
+        are Lipschitz continuous. In particular, the projections \(\text{pr}_k \colon 
+        \mathbb{K}^m \to \mathbb{K}\) are Lipschitz continuous. 
+        \item Let \(E\) be a normed vector space. Then the norm function
+        \[
+           \lVert \cdot \rVert \colon E \to \mathbb{R}, \:\:\:\:\: x \mapsto \lVert x \rVert
+        \]
+        is Lipschitz continuous. 
+        \item If \(A \subseteq X\) and \(f \colon X \to Y\) is continuous at \(x_0 \in A\),
+        then \(f|A \colon A \to Y\) is continuous at \(x_0\). Here \(A\) has the metric 
+        induced from \(X\). 
+        \item Let \(M \subseteq X\) be a nonempty subset of \(X\). For each \(x \in X\), 
+        \[
+           d(x, M) \coloneqq \text{inf}_{m \in M} d(x,m)
+        \]
+        is called the \textbf{distance} from \(x\) to \(M\). The \textbf{distance function}
+        \[
+            d(\cdot, M) \colon X \to \mathbb{R}, \:\:\:\: x \mapsto d(x, M)   
+        \]
+        is Lipschitz continuous. 
+        \item For any inner product space (\(E, \left(\cdot|\cdot\right)\)), the scalar
+        product \(\left(\cdot|\cdot\right) \colon E \times E \to \mathbb{K}\) is continuous. 
+        \item Let \(E\) and \(F\) be normed vector spaces and \(X \subseteq E\). Then the 
+        continuity of \(f \colon X \to F\) at \(x_0 \in X\) is independent of the choice of 
+        equivalent norms on \(E\) and on \(F\).  
+
+        \item A function \(f\) between metric spaces \(X\) and \(Y\) is \textbf{isometric}
+        (or an \textbf{isometry}) if \(d\left(f\left(x\right), f\left(x{}'\right)\right)
+        = d\left(x, x{}'\right)\) for all \(x, x{}' \in X\), that is, if f 'preserves 
+        distances'. Such a function is Lipschitz continuous and is a bijection from \(X\)
+        to its image \(f\left(X\right)\). If \(E\) and \(F\) are normed vector spaces 
+        and \(T \colon E \to F\) is linear, then \(T\) is isometric if and only if 
+        \(\lVert Tx \rVert = \lVert x \rVert\) for all \(x \in E\). If, in addition, 
+        \(T\) is surjective then \(T\) is an \textbf{isometric isomorphism} from \(E\)
+        to \(F\), and \(T^{-1}\) is also isometric. 
+    \end{enumerate}
+\end{eg}
+
+\section{Sequential Continuity}
+
+\begin{definition}[Sequential Continuity]\label{def: sequential_conti}
+    A function \(f \colon X \to Y\) between metric spaces \(X\) and \(Y\) is called 
+    \textbf{sequentially continuous} at \(x \in X\), if, for every sequences (\(x_k\))
+    in \(X\) such that \(\lim_{x_k} = x\), we have \(\lim_{f\left(x_k\right)} = f\left(x\right)\). 
+\end{definition}
+
+\begin{theorem}[sequence criterion]
+    Let \(X, Y\) be metric spaces. Then a function \(f \colon X \to Y\) is continuous 
+    at \(x\) if and only if it is sequentially continuous at \(x\). 
+\end{theorem}
+
+Let \(f \colon X \to Y\) be a continuous function between metric spaces. Then for any 
+convergent sequence (\(x_k\)) in \(X\) we have 
+\[
+    \lim f(x_k) = f(\lim x_k)  
+\]
+That's why we say 'continuous functions respect the taking of limits'. 
+
+\section{Addition and Multiplication of Continuous Functions}
+\begin{proposition}
+    Suppose that \(X\) is a metric space, \(F\) is a normed vector space, and 
+    \[
+        f \colon \text{dom}(f) \subseteq X \to F, \:\:\:\:\: 
+        g \colon \text{dom}(g) \subseteq X \to F 
+    \]
+    are continuous at \(x_0 \in \text{dom}\left(f\right) \cap \text{dom}\left(g\right)\). 
+
+    \begin{itemize}
+        \item \(f + g\) and \(\lambda f\) are continuous at \(x_0\). 
+        \item If \(F = \mathbb{K}\), then \(f \cdot g\) is continuous at \(x_0\). 
+        \item If \(F = \mathbb{K}\) and \(g\left(x_0\right) \neq 0\), then 
+        \(f / g\) is continuous at \(x_0\). 
+    \end{itemize}
+\end{proposition}
+
+\begin{corollary}
+    \begin{enumerate}[label=(\roman*)]
+        \item Rational functions are continuous. 
+        \item Polynomials in \(n\) variables are continuous (on \(\mathbb{K}^m\)). 
+        \item \(C\left(X, F\right)\) is a subspace of \(F^X\), the \textbf{vector space
+        of continuous functions} from \(X\) to \(F\). 
+    \end{enumerate}
+\end{corollary}
+
+\begin{theorem}[continuity of compositions]
+    Let \(X, Y\) and \(Z\) be metric spaces. Suppose that \(f \colon X \to Y\) is 
+    continuous at \(x \in X\), and \(g \colon Y \to Z\) is continuous at 
+    \(f\left(x\right) \in Y\). Then the composition \(g \circ f \colon X \to Z\)
+    is continuous at \(x\). 
+\end{theorem}
+
+\begin{eg}
+    Let \(X\) be a metric space and \(E\) be a normed vector space. \\ 
+   
+    Let \(f \colon X \to E\) be continuous at \(x_0\). Then the \textbf{norm of } \(f\),
+    \[
+        \lVert f \rVert \colon X \to \mathbb{R}, \:\:\:\:\:\: x \mapsto \lVert f(x) \rVert ,
+    \]
+    is continuous at \(x_0\). 
+\end{eg}
+
+\section{One-Sided Continuity}
+
+Let \(X\) be a subset of \(\mathbb{R}\) and \(x_0 \in X\). For \(\delta > 0\), the set
+\(X \cap (\ x_0 - \delta, x_0 ]\  \) (or \(X \cap [\ x_0, x_0 + \delta )\ \) ) is called 
+a \textbf{left} (or \textbf{right}) \(\delta\)-\textbf{neighborhood} of \(x_0\). 
+
+Let \(Y\) be a metric space. Then \(f \colon X \to Y\) is \textbf{left} (or \textbf{right})
+\textbf{continuous} at \(x_0\), if, for each neighborhood \(V\) of \(f\left(x_0\right)\)
+in \(Y\), there is some \(\delta > 0\) such that \(f\left(X \cap (\ x_0 - \delta, x_0  ]\ \right)
+\subseteq V\) (or \(f\left(X \cap [\ x_0, x_0 + \delta  )\ \right) \subseteq V\)). 
+

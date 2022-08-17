@@ -1914,6 +1914,14 @@ INPUT ./Chapters/ch9_continuity.tex
 INPUT Chapters/ch9_continuity.tex
 INPUT ./Chapters/ch9_continuity.tex
 INPUT Chapters/ch9_continuity.tex
+INPUT ./Chapters/ch10.tex
+INPUT Chapters/ch10.tex
+INPUT ./Chapters/ch10.tex
+INPUT Chapters/ch10.tex
+INPUT ./Chapters/ch11.tex
+INPUT Chapters/ch11.tex
+INPUT ./Chapters/ch11.tex
+INPUT Chapters/ch11.tex
 INPUT master.aux
 INPUT ./master.out
 INPUT ./master.out

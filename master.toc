@@ -38,3 +38,11 @@
 \contentsline {section}{\numberline {9.2}Sequential Continuity}{29}{section.9.2}%
 \contentsline {section}{\numberline {9.3}Addition and Multiplication of Continuous Functions}{29}{section.9.3}%
 \contentsline {section}{\numberline {9.4}One-Sided Continuity}{30}{section.9.4}%
+\contentsline {chapter}{\numberline {10}The Fundamentals of Topology}{31}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Open Sets}{31}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Closed Sets}{31}{section.10.2}%
+\contentsline {section}{\numberline {10.3}The Closure and Interior of a Set}{32}{section.10.3}%
+\contentsline {section}{\numberline {10.4}The Hausdorff Condition}{33}{section.10.4}%
+\contentsline {section}{\numberline {10.5}A Characterization of Continuous Functions}{33}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Continuous Extensions}{34}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Relative Topology}{34}{section.10.7}%

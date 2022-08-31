@@ -46,3 +46,11 @@
 \contentsline {section}{\numberline {10.5}A Characterization of Continuous Functions}{33}{section.10.5}%
 \contentsline {section}{\numberline {10.6}Continuous Extensions}{34}{section.10.6}%
 \contentsline {section}{\numberline {10.7}Relative Topology}{34}{section.10.7}%
+\contentsline {chapter}{\numberline {11}Compactness}{35}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Covers}{35}{section.11.1}%
+\contentsline {section}{\numberline {11.2}A Characterization of Compact Set}{35}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Sequential Compactness}{35}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Continuous Functions on Compact Spaces}{36}{section.11.4}%
+\contentsline {section}{\numberline {11.5}Total Boundedness}{36}{section.11.5}%
+\contentsline {section}{\numberline {11.6}Uniform continuity}{36}{section.11.6}%
+\contentsline {section}{\numberline {11.7}Compactness in General Topological Spaces}{36}{section.11.7}%

@@ -1,0 +1,107 @@
+\chapter{Connectivity}
+
+\begin{definition}[connectedness]
+    A metric space \(X\) is called \textbf{connected} if \(X\) cannot be represented as 
+    the union of two disjoint nonempty open subsets. Thus \(X\) is connected if and only if 
+    \[
+        \nexists \: O_1, O_2 \subseteq X, \: \text{open, nonempty, with } O_1 \cap O_2 = \emptyset 
+        \: \text{and } O_1 \cup O_2 = X     
+    \]
+    A subset \(M\) of \(X\) is called \textbf{connected} in \(X\) if \(M\) is connected 
+    with respect to the metric induced from \(X\). 
+\end{definition}
+
+% \begin{example}
+%     \begin{enumerate}[label=(\alph*)]
+%         \item The empty set and any one-element set are connected. 
+%         \item The set of the natural numbers \(\mathbb{N}\) is not connected. 
+%         \item The set of rational numbers \(\mathbb{Q}\) is not connected in \(\mathbb{R}\).
+%     \end{enumerate}
+% \end{example}
+
+\begin{proposition}
+    For any metric space \(X\), the followings are equivalent: 
+    \begin{itemize}
+        \item \(X\) is connected. 
+        \item \(X\) is the only nonempty subset of \(X\) which is both open and closed. 
+    \end{itemize}
+\end{proposition}
+
+\begin{theorem} [Connectivity in \(\mathbb{R}\)]
+    A subset of \(\mathbb{R}\) is connected if and only if it is an interval. 
+\end{theorem}
+
+\section{The Generalized Intermediate Value Theorem}
+
+\begin{theorem}
+    Let \(X\) and \(Y\) be metric spaces and \(f \colon X \to Y\) continuous. If \(X\)
+    is connected, then so is \(f\left(X\right)\). That is, continuous images of connected
+    sets are connected. 
+\end{theorem}
+
+\begin{corollary}
+    Continuous images of intervals are connected. 
+\end{corollary}
+
+\begin{theorem}[Generalized Intermediate Value Theorem]
+    Let \(X\) be a connected metric space and \(f \colon X \to \mathbb{R}\) continuous. 
+    Then \(f\left(X\right)\) is an interval. In particular, \(f\) takes on every value 
+    between any two given function values. 
+\end{theorem}
+
+\section{Path Connectivity}
+
+\begin{definition}
+    Let \(\alpha, \beta \in \mathbb{R}\) with \(\alpha < \beta\). A continuous function 
+    \(w \colon [\alpha, \beta ] \to X\) is called a \textbf{continuous path} connecting 
+    \textbf{end points} \(w\left(\alpha\right)\) and \(w\left(\beta\right)\). 
+\end{definition}
+
+
+\begin{definition}
+    A metric space \(X\) is called \textbf{path connected} if, for each pair \(\left(x, y\right) \in X \times X\), 
+    there is a continuous path in \(X\) connecting \(x\) and \(y\). A subset of a metric space 
+    is called \textbf{path connected} if it is a path connected metric space with respect 
+    to the induced metric. 
+\end{definition}
+
+\begin{proposition}
+    Any path connected space is connected. 
+\end{proposition}
+
+Let \(E\) be a normed vector space and \(a, b \in E\). The linear structure of \(E\) allows us 
+to consider 'straight' paths in \(E\): 
+\[
+    v \colon [0, 1] \to E, \:\:\: t \mapsto (1-t)a + tb  
+\]
+we denote the image of the path \(v\) by \([a, b] \)
+
+A subset \(X\) of \(E\) is called \textbf{convex} if, for each pair 
+\(\left(a, b\right) \in X \times X\), [\(a, b\)] is contained in \(X\). 
+
+\begin{remark}
+    Let \(E\) be a normed vector space. 
+    \begin{enumerate}[label=(\alph*)]
+        \item Every convex subset of \(E\) is path connected and connected. 
+        \item For all \(a \in E\) and \(r > 0\), the balls \(\mathbb{B}_E\left(a, r\right)\) are convex. 
+        \item A subset of \(\mathbb{R}\) is convex if and only if it is an interval. 
+    \end{enumerate}
+\end{remark}
+
+
+\begin{theorem}
+    Let \(X\) be a nonempty, open and connected subset of a normed vector space. 
+    Then any pair of points of \(X\) can be connected by a polygonal path in \(X\). 
+\end{theorem}
+
+\begin{corollary}
+    An open subset of a normed vector space is connected if and only if it is path connected. 
+\end{corollary}
+
+
+
+
+
+
+
+

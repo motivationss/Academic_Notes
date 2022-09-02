@@ -54,3 +54,8 @@
 \contentsline {section}{\numberline {11.5}Total Boundedness}{36}{section.11.5}%
 \contentsline {section}{\numberline {11.6}Uniform continuity}{36}{section.11.6}%
 \contentsline {section}{\numberline {11.7}Compactness in General Topological Spaces}{36}{section.11.7}%
+\contentsline {chapter}{\numberline {12}Connectivity}{38}{chapter.12}%
+\contentsline {section}{\numberline {12.1}The Generalized Intermediate Value Theorem}{38}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Path Connectivity}{38}{section.12.2}%
+\contentsline {part}{IV\hspace {1em}Differentiation in One Variable}{40}{part.4}%
+\contentsline {chapter}{\numberline {13}Differentiability}{41}{chapter.13}%

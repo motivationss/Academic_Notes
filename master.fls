@@ -1922,6 +1922,14 @@ INPUT ./Chapters/ch11.tex
 INPUT Chapters/ch11.tex
 INPUT ./Chapters/ch11.tex
 INPUT Chapters/ch11.tex
+INPUT ./Chapters/ch12.tex
+INPUT Chapters/ch12.tex
+INPUT ./Chapters/ch12.tex
+INPUT Chapters/ch12.tex
+INPUT ./Chapters/ch13.tex
+INPUT Chapters/ch13.tex
+INPUT ./Chapters/ch13.tex
+INPUT Chapters/ch13.tex
 INPUT master.aux
 INPUT ./master.out
 INPUT ./master.out

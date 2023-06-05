@@ -1,0 +1,107 @@
+\chapter{The Real Numbers}
+
+Starting words: we seek an ordered \textbf{extension field} of \(\mathbb{Q}\) in which
+the equation \(x^2 = a\) is solvable for each \(a > 0\).
+
+\section{Order Completeness}
+
+We say a totally ordered set \(X\) is \textbf{order complete} (or \(X\) satisfies the \textbf{completeness axiom}) if every nonempty subset
+of \(X\) which is bounded above has a supremum.
+
+\begin{proposition}
+    Let \(X\) be a totally ordered set. Then the followings are equivalent:
+    \begin{enumerate}[label= (\roman*)]
+        \item \(X\) is order complete. 
+        \item Every nonempty subset of \(X\) which is bounded below has an infimum.
+        \item For all nonempty subsets \(A, B\) of \(X\) such that \(a \leq b\) for all 
+        (\(a, b\)) \(\in A \times B\), there is some \(c \in X\) such that \(a \leq c \leq b\)
+        for all \(\left(a, b\right) \in A \times B\)  (\textbf{Dedekind cut property})
+    \end{enumerate}
+\end{proposition}
+\begin{note}
+    A relation \(\leq\) on \(X\) is a \textbf{partial order} on \(X\) if it is reflexive,
+    transitive and \textbf{anti-symmetric}, that is, 
+    \[
+        (x \leq y) \and (y \leq x) \implies x = y  
+    \]
+
+    If \(\leq\) is a partial order on \(X\), then the pair (\(X, \leq\)) is called a
+    \textbf{partially ordered set}. If, in addition,
+    \[
+        \forall x,y \in X \colon (x \leq y) \lor (y \leq x)  
+    \]
+    then \(\leq \) is called a \textbf{total order} on \(X\) and (\(X, \leq\)) is a \textbf{totally ordered set}. 
+\end{note}
+
+\begin{corollary}
+    A totally ordered set is order complete if and only if every nonempty bounded subset 
+    has a supremum and an infimum. 
+\end{corollary}
+
+\begin{theorem}[Dedekind's Construction of the Real Numbers]
+    There is, up to isomorphism, a unique order complete extension field \(\mathbb{R}\) of 
+    \(\mathbb{Q}\). This extension is called \textbf{the field of real numbers}. 
+\end{theorem}
+
+\begin{proposition} [A Characterization of Supremum and Infimum] 
+
+    \begin{enumerate}[label=(\roman*)]
+        Followed from natural order defined by \(\mathbb{R}\). 
+        \item If \(A \subseteq \mathbb{R}\) and \(x \in \mathbb{R}\), then
+        \begin{enumerate}
+            \item \(x < \text{sup} \left( A \right) \Leftrightarrow  \exists a \in A  \) such that \(x < a\).
+            \item  \(x < \text{inf} \left( A \right) \Leftrightarrow  \exists a \in A  \) such that \(x > a\).
+        \end{enumerate}
+        \item Every subset \(A\) of \(\mathbb{R}\) has a supremum and an infimum in \(\mathbb{R}\) 
+    \end{enumerate}
+\end{proposition}
+
+\section{The Consequence of Order Completeness}
+
+\subsection*{The Archimedean Property}
+
+\begin{proposition}[Archimedes]
+    \(\mathbb{N}\) is not bounded above in \(\mathbb{R}\), that is, for each \(x \in \mathbb{R}\)
+    there is some \(n \in \mathbb{N}\) such that \(n > x\). 
+\end{proposition}
+
+\begin{corollary} Equivalent statements as the above proposition
+    \begin{enumerate}[label=(\alph*)]
+        \item Let \(a \in \mathbb{R}\). If \(0 \leq a \leq 1/n\) for all \(n \in \mathbb{N}^\times\).
+        \item For each \(a \in \mathbb{R}\) with \(a > 0\) there is some \(n \in \mathbb{N}^\times\) such that \(1/n < a\). 
+    \end{enumerate}
+\end{corollary}
+
+\subsection*{The Density of the Rational/Irrational Numbers in \(\mathbb{R}\)}
+
+\begin{proposition}
+    For all \(a, b \in \mathbb{R}\) such that \(a < b\), there is some \(r \in \mathbb{Q}\)
+    such that \(a < r < b\). 
+\end{proposition}
+
+\begin{proposition}[\(n^{\text{th}}\) Roots]
+    For all \(a \in \mathbb{R}^{+}\) and \(n \in \mathbb{N}^\times\), there is a unique
+    \(x \in \mathbb{R}^+\) such that \(x^n = a\)
+\end{proposition}
+
+\begin{proposition}
+    For all \(a, b \in \mathbb{R}\) such that \(a < b\), there is some \(\xi  \in \mathbb{R}\backslash\mathbb{Q}\)
+    such that \(a < \xi  < b\).
+\end{proposition}
+
+\subsection*{Intervals}
+
+An \textbf{interval} is a subset \(J\) of \(\mathbb{R}\) such that 
+\[
+    (x, y \in J, x < y) \implies (z \in J \text{for} x < z < y)
+\]
+
+If \(J\) is a nonempty interval, then inf(\(J\)) \(\in \bar{\mathbb{R}}\) is the \textbf{left endpoint}
+and sup(\(J\)) \(\in \bar{\mathbb{R}}\) is the \textbf{right endpoint} of \(J\). \(J\) is
+\textbf{closed on the left} if \(a \coloneqq \) inf(\(J\)) is in \(J\), and otherwise it is 
+\textbf{open on the left}. The same applies to the other side.  \par 
+
+An interval is \textbf{perfect} if it contains at least two points. It is \textbf{bounded}
+if both endpoints are in \(\textbf{R}\) and is \textbf{unbounded} otherwise. If \(J\) is 
+a bounded interval, then the nonnegative number \(\left | J \right | \coloneqq \)
+sup(\(J\)) - inf(\(J\)) is called the \textbf{length} of \(J\). 

@@ -1,0 +1,101 @@
+\chapter{Infinite Limits}
+
+\section{Convergence to \(\pm\infty\)}
+
+Sequences in \(\mathbb{R}\) can usually be considered to converge to \(+\infty\)
+or \(-\infty\) in the extended number line \(\bar{\mathbb{R}}\). A subset \(U \subseteq
+\bar{\mathbb{R}}\) is called a \textbf{neighborhood of} \(\infty\) (or of \(-\infty\))
+if there is some \(K > 0\) such that \(\left(K, \infty\right) \subseteq U\) (or such
+that \(\left(-\infty, -K\right) \subseteqq U\)). The set of neighborhoods of 
+\(\pm\infty\) is denoted by \(\mathcal{U}\left(\pm\infty\right)\), that is,
+\[
+    \mathcal{U}(\pm \infty) \coloneqq {U \subseteq \bar{\mathbb{R}}; \:
+    U \:\:\: \text{is neighborhood of } \pm\infty}
+\]
+Now let (\(x_n\)) be a sequence in \(\mathbb{R}\). Then \(\pm\infty\) is called a
+\textbf{cluster point} (or \textbf{limit}) of (\(x_n\)), if each neighborhood \(U\)
+of \(\pm\infty\) contains infinitely many (or almost all) terms of (\(x_n\)). If 
+\(\pm\infty\) is the limit of (\(x_n\)), we usually write 
+\[
+  \displaystyle \lim_{n \to \infty} x_n = \pm \infty \:\:\:\:\:\:\:\: \text{or}
+  \:\:\:\:\:\:\:\:\:\: x_n \to \pm\infty \:(n \to \infty)  
+\]
+
+The sequence (\(x_n\)) \textbf{converges} in \(\bar{\mathbb{R}}\) if there is some
+\(x \in \bar{\mathbb{R}}\) such that \(\displaystyle\lim_{n\to\infty}x_n = x\). The 
+sequence (\(x_n\)) \textbf{diverges} in \(bar{\mathbb{R}}\), if it does not converge
+in \(\bar{\mathbb{R}}\). With this definition, any sequence which converge in 
+\(\mathbb{R}\), also converges in \(\bar{\mathbb{R}}\), and any sequence which diverges
+in \(\bar{\mathbb{R}}\), also diverges in \(\mathbb{R}\). On the other hand there are 
+divergent sequences in \(\mathbb{R}\) which converge in \(\bar{\mathbb{R}}\) (to \(\pm\infty\)).
+In this case the sequence is said to converge \textbf{improperly}. 
+
+\begin{proposition}
+    Every monotone sequence (\(x_n\)) in \(\mathbb{R}\) converges in \(\bar{\mathbb{R}}\),
+    and
+    \[
+        \text{lim}x_n =  
+        \begin{cases}
+            \text{sup}{x_n ; n \in \mathbb{N}}, & \text{ if } (x_n) \text{ is increasing}, \\ 
+            \text{inf}{x_n ; n \in \mathbb{N}}, & \text{ if } (x_n) \text{ is decreasing}. 
+        \end{cases}
+    \]
+\end{proposition}
+
+\section{The Limit Superior and Limit Inferior}
+
+
+\begin{definition}
+    Let (\(x_n\)) be a sequence in \(\mathbb{R}\). We can define two new sequences 
+    (\(y_n\)) and (\(z_n\)) by 
+    \[
+      \displaystyle  y_n \coloneqq \text{sup}_{k \geq n} x_k \coloneqq \text{sup}{x_k ; k \geq n}, 
+    \] 
+    
+    \[ 
+        z_n \coloneqq \text{inf}_{k \geq n} x_k \coloneqq \text{inf}{x_k ; k \geq n}.   
+    \]
+    Clearly (\(y_n\)) is increasing and (\(z_n\)) is decreasing. By the above proposition, 
+    these sequences converge in \(\bar{\mathbb{R}}\):
+    \[
+      \displaystyle \text{limsup}_{n \to \infty} x_n \coloneqq \overline{\text{lim}}_{n\to \infty} 
+      x_n \coloneqq \text{lim}_{n\to\infty}(\text{sup}_{k\geq n}x_k).  
+    \]
+    the \textbf{limit superior}, and 
+    \[
+        \displaystyle \text{liminf}_{n \to \infty} x_n \coloneqq \underline{\text{lim}}_{n\to \infty} 
+        x_n \coloneqq \text{lim}_{n\to\infty}(\text{inf}_{k\geq n}x_k). 
+    \]
+    the \textbf{limit inferior} of the sequences (\(x_n\)). We also have
+    \[
+        \text{limsup}x_n = \text{inf}_{n\in \mathbb{N}}(\text{sup}_{k\geq n}x_k)
+        \:\:\:\: \text{and} \:\:\:\: \text{liminf}x_n = \text{sup}_{n\in \mathbb{N}}
+        (\text{inf}_{k\geq n} x_k).   
+    \]
+\end{definition}
+
+\begin{theorem}
+    Any sequence (\(x_n\)) in \(\mathbb{R}\) has a smallest cluster point \(x_{*}\)
+    and a greatest cluster point \(x^*\) in \(\bar{\mathbb{R}}\) and these satisfy
+    \[
+        \text{liminf}x_n = x_* \:\:\:\:\: \text{and} \:\:\:\:\: \text{limsup}x_n = x^*   
+    \]
+\end{theorem}
+
+\begin{theorem}
+    Let (\(x_n\)) be a sequence in \(\mathbb{R}\). Then 
+    \[
+        (x_n) \text{ converges in } \bar{\mathbb{R}} \Leftrightarrow 
+        \overline{\lim} x_n \leq \underline{\text{lim}}x_n 
+    \]
+    When the sequence converges, the limit \(x\) satisfies
+    \[
+        x = \text{lim}x_n = \underline{\lim} x_n = \overline{\lim} x_n.
+    \]
+\end{theorem}
+
+\begin{theorem}[Bolzano-Weierstrass] \label{theorem: bolzano-weierstrass}
+    Every bounded sequence in \(\mathbb{K}^m\) has a convergent subsequence,
+    that is, a cluster point. 
+\end{theorem}
+

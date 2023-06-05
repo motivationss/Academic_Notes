@@ -1,0 +1,49 @@
+\documentclass[a4paper]{report}
+\input{header.tex}
+\author{Gaotang Li}
+\title{Analysis}
+
+\thispagestyle{empty}
+\addbibresource{ref.bib}
+
+\usetikzlibrary{lindenmayersystems}
+\pgfdeclarelindenmayersystem{cantor set}{
+  \rule{F -> FfF}
+  \rule{f -> fff}
+}
+\usetikzlibrary{arrows}
+\newcommand{\nMAX}{63} 
+\newcommand{\xGrSamp}{8} 
+
+\usepackage{pgfplots}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\input{Chapters/ch1_groups.tex}
+\input{Chapters/ch2_rings.tex}
+\input{Chapters/ch3_reals.tex}
+\input{Chapters/ch4_vecspace.tex}
+\input{Chapters/ch5_convergence_of_seq.tex}
+\input{Chapters/ch6_normed_vectorspace.tex}
+\input{Chapters/ch7_infinite_limit.tex}
+\input{Chapters/ch8_completeness.tex}
+\input{Chapters/ch9_continuity.tex}
+\input{Chapters/ch10.tex}
+\input{Chapters/ch11.tex}
+\input{Chapters/ch12.tex}
+\input{Chapters/ch13.tex}
+\newpage
+%─────Appendix────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+% \appendix
+% \appendixpage
+
+% \input{appendix.tex}
+
+% \newpage
+%─────Reference──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+\printbibliography
+
+\end{document}

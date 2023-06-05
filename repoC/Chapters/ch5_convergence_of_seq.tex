@@ -1,0 +1,201 @@
+\part{Convergence}
+\chapter{Convergence of Sequences}
+
+\section{Sequences}
+
+\begin{definition}[Sequence]\label{def: sequence}
+    Let \(X\) be a set. A \textbf{sequence} (in \(X\)) is simply a function from
+    \(\mathbb{N}\) to \(X\). If \(\varphi \colon \mathbb{N} \mapsto X\) is a sequence,
+    we write also
+    \[
+        (x_n), (x_n)_{n\in \mathbb{N}} \text{ or } (x_0,x_1,x_2,\ldots)  
+    \]
+    for \(\varphi\), where \(x_n \coloneqq \varphi\left(n\right)\) is the \(n^{\text{th}}\)
+    term of the sequence \(\varphi = \left(x_0, x_1, x_2, \ldots\right)\). 
+\end{definition}
+
+\begin{remark}
+    \begin{enumerate}[label = (\alph*)]
+        \item A sequence (\(x_n\)) is different from its image \(\{x_n; n\in \mathbb{N}\}\).
+        \item Let (\(x_n\)) be a sequence in \(X\) and \(E\) a property. Then we say 
+        \(E\) holds for \textbf{almost all} terms of (\(x_n\)) if there is some \(m \in \mathbb{N}\)
+        such that \(E\left(x_n\right)\) is true for all \(n \geq m\), that is, if \(E\) holds for 
+        all but finitely many of the \(x_n\). If there is a subset \(N \subseteq \mathbb{N}\)
+        with Num(\(N\)) = \(\infty\) and \(E\left(x_n\right)\) is true for each \(n \in N\)
+        then \(E\) is true for \textbf{infinitely many} terms. 
+        \item For \(m \in \mathbb{N}^\times\), a function \(\varPhi \colon m + \mathbb{N} \mapsto X\)
+        is also called a sequence in \(X\). 
+    \end{enumerate}
+\end{remark}
+
+\section{Metric Space}
+
+\begin{definition}[Metric Space]\label{def: metric_space}
+    Let \(X\) be a set. A function \(d \colon X \times X \mapsto \mathbb{R}^+\) is called
+    a \textbf{metric} on \(X\) if the following hold:
+    \begin{itemize}
+        \item \(d\left(x, y\right) = 0 \leftrightarrow x=y\). 
+        \item \(d\left(x, y\right) = d\left(y, x\right)\), \(x, y \in X\) (symmetry). 
+        \item \(d\left(x, y\right) \leq d\left(x, z\right) + d\left(y, z\right)\), 
+        \(x, y, z \in X\) (triangle inequality). 
+    \end{itemize}
+\end{definition}
+
+\begin{note}
+    If \(d\) is a metric on \(X\), then (\(X, d\)) is called a \textbf{metric space}. We call
+    \(d\left(x, y\right)\) the \textbf{distance} between the \textbf{points} \(x\) and \(y\)
+    in the metric space \(X\). \par 
+    In the metric space (\(X, d\)), for \(a \in X\) and \(r > 0\), the set
+    \[
+        \mathbb{B}(a, r) \coloneqq \mathbb{B}_X (a, r) \coloneqq \{ x \in X ; d(a, x) < r \}    
+    \]
+    is called the \textbf{open ball} with center at \(a\) and radius \(r\), while
+    \[
+        \bar{\mathbb{B}}(a, r) \coloneqq \bar{\mathbb{B}}_X (a, r) \coloneqq \{ x \in X; d(a, x) \leq r \}  
+    \]
+    is called the \textbf{closed ball} with center at \(a\) and radius \(r\). 
+\end{note}
+
+\begin{eg}
+    \begin{enumerate}[label = (\alph*)]
+        \item \(\mathbb{K}\) is a metric space with the \textbf{natural metric}
+        \[
+            \mathbb{K} \times \mathbb{K} \mapsto \mathbb{R}^+ , \:\:\:\: (x, y) \mapsto \left | x - y \right |  
+        \]
+        \item Let (\(X, d\)) be a metric space and \(Y\) a nonempty subset of \(X\). Then the 
+        restriction of \(d\) to \(Y \times Y\), \(d_Y \coloneqq d|Y \times Y\), is a metric
+        on \(Y\), the \textbf{induced metric}, and (\(Y, d_Y\)) is a metric space, a 
+        \textbf{metric subspace} of \(X\). 
+        \item Let \(X\) be a nonempty set. Then the function \(d\left(x, y\right) \coloneqq 1\)
+        for \(x \neq y\) and \(d\left(x, x\right) \coloneqq 0 \) is a metric, called 
+        the \textbf{discrete metric} on \(X\). 
+        \item Let (\(X_j, d_j\)), \(1 \leq j \leq m\), be metric spaces and 
+        \(X \coloneqq X_1 \times \cdots \times X_m\). Then the function 
+        \[
+            d(x, y) \coloneqq \underset{1 \leq j \leq m}{max} d_j(x_j, y_j)  
+        \]
+        for \(x \coloneqq \left(x_1, \ldots, x_m\right) \in X\) and \(y \coloneqq \left(y_1, \ldots, y_m\right) \in X\)
+        is a metric on \(X\) called the \textbf{product metric}. The metric space \(X \coloneqq\)
+        (\(X, d\)) is called the \textbf{product of the metric spaces} (\(X_j, d_j\))
+    \end{enumerate}
+\end{eg}
+
+\begin{proposition}
+    Let (\(X, d\)) be a metric space. Then for all \(x, y, z \in X\) we have 
+    \[
+        d(x, y) \geq \left |  d(x, z) - d(z, y) \right |  
+    \]
+\end{proposition}
+
+\begin{note}
+    A subset \(U\) of a metric space \(X\) is called a \textbf{neighborhood} of \(a \in X\)
+    if there is some \(r > 0\) such that \(\mathbb{B}\left(a, r\right) \subseteq U\). The
+    \textbf{set of all neighborhoods of the point} \(a\) is denoted by \(\mu\left(a\right)\),
+    that is, 
+    \[
+        \mu(a) \coloneqq \mu_X (a) \coloneqq \{ U \subseteq X ; U \text{ is a neighborhood of } a \}
+        \subseteq P(X)  
+    \]
+\end{note}
+
+\subsection*{Cluster Point}
+
+\begin{definition}[Cluster Point]\label{def: cluster_pt}
+    We call \(a \in X\) a \textbf{cluster point} of (\(x_n\)) if every neighborhood of 
+    \(a\) contains infinitely many terms of the sequence. 
+\end{definition}
+
+\begin{proposition}
+    The following are equivalent: 
+    \begin{enumerate}[label=(\roman*)]
+        \item \(a\) is a cluster point of (\(x_n\)). 
+        \item For each \(U \in \mu\left(a\right)\) and \(m \in \mathbb{N}\), there is some 
+        \(n \geq m\) such that \(x_n \in U\). 
+        \item For each \(\epsilon > 0\) and \(m \in \mathbb{N}\), there is some \(n \geq m\)
+        such that \(x_n \in \mathbb{B}\left(a, \epsilon\right)\)
+    \end{enumerate}
+\end{proposition}
+
+\section{Convergence}
+
+\begin{definition}[Convergence]\label{def: convergence}
+    A sequence (\(x_n\)) \textbf{converges} (or is \textbf{convergent}) with \textbf{limit}
+    \(a\) if each neighborhood of \(a\) contains almost all terms of the sequence. In this 
+    case we write 
+    \[
+        \displaystyle{\lim_{n \to \infty}} x_n = a \text{    or    } x_n \to a (n \to \infty)  
+    \]
+    and we say that (\(x_n\)) \textbf{converges to} \(a\) \textbf{as} \(n\) \textbf{goes to}
+    \(\infty\). A sequence (\(x_n\)) that is not convergent is called \textbf{divergent}
+    and we say (\(x_n\)) \textbf{diverges}. 
+\end{definition}
+
+\begin{proposition}
+    The following statements are equivalent:
+    \begin{enumerate}[label=(\roman*)]
+        \item \(lim_{x_n} = a\). 
+        \item For each \(U \in \mu\left(a\right)\), there is some \(N \coloneqq N\left(U\right)\)
+        such that \(x_n \in U\) for all \(n \geq N\). 
+        \item For each \(\epsilon > 0\), there is some \(N \coloneqq N\left(\epsilon\right)\)
+        such that \(x_n \in \mathbb{B}\left(a, \epsilon\right)\) for all \(n \geq N\).  
+    \end{enumerate}
+\end{proposition}
+
+\subsection*{Bounded Sets}
+
+\begin{definition}
+    A subset \(Y \subseteq X\) is called d-\textbf{bounded} or \textbf{bounded in } \(X\)
+    (with respect to the metric \(d\)) if there is some \(M > 0\) such that 
+    \(d\left(x, y\right) \leq M\) for all \(x, y \in Y\). In this circumstance the 
+    \textbf{diameter} of \(Y\), defined by 
+    \[
+        \text{diam}(Y) \coloneqq \displaystyle{\text{sup}_{x, y \in Y}}d(x, y)  
+    \]
+    is finite. A sequence (\(x_n\)) is \textbf{bounded} if its image 
+    \(\{x_n ; n \in \mathbb{N}\}\) is bounded. 
+\end{definition}
+
+\begin{proposition}
+    Any convergent sequence is bounded. 
+\end{proposition}
+
+\begin{proof}
+    Suppose that \(x_n \to a\). Then there is some \(N\) such that \(x_n \in \mathbb{B}\)
+    (\(a, 1\)) for all \(n \geq N\). It follows from the triangle inequality that
+    \[
+        d(x_m, x_n) \leq d(x_m, a) + d(a, x_n) \leq 2, \:\:\:\:\: m,n \in \mathbb{N}
+    \]
+    Since there is also some \(M \geq 0\) such that \(d\left(x_j, x_k\right) \leq M\)
+    for all \(j, k \leq N\), we have \(d\left(x_n, x_m\right) \leq M + 2\) for all
+    \(m, n \in \mathbb{N}\). 
+\end{proof}
+
+\subsection*{Uniqueness of the Limit}
+
+\begin{proposition}
+    Let (\(x_n\)) be convergent with limit \(a\). Then \(a\) is the unique cluster point 
+    of (\(x_n\)). 
+\end{proposition}
+
+\begin{corollary}
+    The limit of a convergent sequence is unique. 
+\end{corollary}
+
+\subsection*{Subsequence}
+
+Let \(\varphi = \left(x_n\right)\) be a sequence in \(X\) and \(\varPhi \colon \mathbb{N} \to \mathbb{N}\)
+a strictly increasing function, then \(\varphi \circ \varPhi \in X^\mathbb{N}\) is called a 
+\textbf{subsequence} of \(\varphi\). Extending the notation \(\left(x_n\right)_{n\in \mathbb{N}}\)
+introduced above for the sequence \(\varphi\), we write \(\left(x_{n_k}\right)_{k\in\mathbb{N}}\)
+for the subsequence \(\varphi \circ \varPhi \) where \(n_k \coloneqq \varPhi\left(k\right)\). 
+
+\begin{proposition}
+    If (\(x_n\)) is a convergent sequence with limit \(a\), then each subsequence
+    \(\left(x_{n_k}\right)_{k\in \mathbb{N}}\) of (\(x_n\)) is convergent with 
+    \(\lim_{k \to \infty }x_{n_k} = a\). 
+\end{proposition}
+
+\begin{proposition}
+    A point \(a\) is a cluster point of a sequence (\(x_n\)) if and only if there is some 
+    subsequence \(\left(x_{n_k}\right)_{k\in\mathbb{N}}\) of (\(x_n\)) which converges to \(a\). 
+\end{proposition}

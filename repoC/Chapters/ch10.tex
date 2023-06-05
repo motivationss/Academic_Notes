@@ -1,0 +1,269 @@
+\chapter{The Fundamentals of Topology}
+
+\section{Open Sets}
+\begin{definition}
+    Let \(X \coloneqq \left(X, d\right)\) be a metric space. An element \(a\) of a subset
+    \(A\) of \(X\) is called an \textbf{interior point} of \(A\) if there is a neighborhood
+    \(U\) of \(a\) such that \(U \subseteq A\). The set \(A\) is called \textbf{open} 
+    if every point of \(A\) is an interior point.    
+\end{definition}
+
+\begin{eg}
+    The open ball \(\mathbb{B}\left(a, r\right)\) is open. 
+\end{eg}
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item The concepts "interior point" and "open set" depend on the surrounding metric 
+        space \(X\). It is sometimes useful to make this explicit by saying that '\(a\) is 
+        an interior point of \(A\) with respect to \(X\)', or '\(A\) is open in \(X\)'. 
+        
+        \item If \(A\) is open with respect to a particular norm, it is open with respect 
+        to all equivalent norms. 
+        \item Every point in a metric space has an open neighborhood
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}
+    Let \(\tau \coloneqq \{O \subseteq X; \:\: O \:\: \text{is open}\} \) be a family of open sets. 
+    \begin{enumerate}[label=(\roman*)]
+        \item \(\emptyset, X \in \tau\)
+        \item If \(O_\alpha \in \tau\) for all \(\alpha \in \mathcal{A}\), then \(\bigcup_\alpha O_\alpha \in \tau\). 
+        That is, arbitrary unions of open sets are open. 
+        \item If \(O_0, \ldots, O_n \in \tau\), then \(\bigcap^n_{k=0}O_k \in \tau\). That is,
+        finite intersections of open sets are open. 
+    \end{enumerate}
+\end{proposition}
+
+Let \(M\) be a set and \(\tau \subseteq \mathcal{P}\left(M\right)\), a set of subset satisfying
+(i)-(iii). Then \(\tau\) is called a \textbf{topology} on \(M\), and the elements of \(\tau\)
+are called the \textbf{open sets} with respect to \(\tau\). The pair (\(M, \tau\)) is called 
+a \textbf{topological space}. 
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let \(\tau \in \mathcal{P}\left(X\right)\) be the family of open sets. 
+        Then \(\tau\) is called the \textbf{topology on} \(X\) \textbf{induced from the metric} \(d\). 
+        If \(X\) is a normed vector space with metric induced from the norm, then \(\tau\) is called
+        the \textbf{norm topology}. 
+        \item  Let (\(X, \lVert \cdot \rVert\)) be a normed vector space, and \(\lVert \cdot \rVert_1\)
+        a norm on \(X\) which is equivalent to \(\lVert \cdot \rVert\). Let \(\tau_{\lVert \cdot \rVert}\)
+        and \(\tau_{\lVert \cdot \rVert_1}\) be the norm topologies induced from (\(X, \lVert \cdot \rVert\))
+        and (\(X, \lVert \cdot \rVert_1\)). Then they coincide, that is, equivalent norms induce the 
+        same topology on \(X\). 
+    \end{enumerate}
+\end{remark}
+
+\section{Closed Sets}
+
+A subset \(A\) of the metric space \(X\) is called \textbf{closed} in \(X\) if \(A^c\) is open 
+in \(X\). 
+
+\begin{proposition}
+    \begin{enumerate}[label=(\roman*)]
+        \item \(\emptyset\) and \(X\) are closed. 
+        \item Arbitrary intersections of closed sets are closed. 
+        \item Finite unions of closed sets are closed. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{remark}
+    \begin{itemize}
+        \item Infinite intersections of open sets need not be open. 
+        \item Infinite unions of closed sets need not be closed. 
+    \end{itemize}
+\end{remark}
+
+\begin{definition}
+    Let \(A \subseteq X\) and \(x \in X\). We call \(x\) an \textbf{accumulation point}
+    of \(A\) if every neighborhood of \(x\) in \(X\) has a nonempty intersection with \(A\). 
+    The element \(x \in X\) is called a \textbf{limit point} of \(A\) if every neighborhood
+    of \(x\) in \(X\) contains a point of \(A\) other than \(x\). We set 
+    \[
+        \overline{A} \coloneqq \{ x \in X; \:\: x \:\:\: \text{is an accumulation point of } A \}.   
+    \]
+    Clearly any element of \(A\) and any limit point of \(A\) is an accumulation point of \(A\). 
+\end{definition}
+
+\begin{proposition}
+    Let \(A\) be a subset of a metric space \(X\). 
+    \begin{enumerate}[label=(\roman*)]
+        \item \(A \subseteq \overline{A}\)
+        \item \(A = \overline{A} \Leftrightarrow A\) is closed. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+    An element \(x\) of \(X\) is a limit point of \(A\) if and only if there is a sequence 
+    (\(x_k\)) in \(A \backslash \{x\}\) which converges to \(x\). 
+\end{proposition}
+
+\begin{corollary}
+    An element \(x\) of \(X\) is an accumulation point of \(A\) if and only if there is 
+    a sequence (\(x_k\)) in \(A\) such that \(x_k \to x\). 
+\end{corollary}
+
+
+\begin{proposition}
+    For \(A \subseteq X\), the followings are equivalent:
+    \begin{itemize}
+        \item \(A\) is closed. 
+        \item \(A\) contains all its limit points. 
+        \item Every sequence in \(A\) which converges in \(X\), has its limits in \(A\). 
+    \end{itemize}
+\end{proposition}
+
+
+\section{The Closure and Interior of a Set}
+
+\begin{definition}
+    Let \(A\) be a subset of a metric space \(X\). Define the \textbf{closure of } \(A\) by 
+    \[
+       \text{cl}(A) \coloneqq \text{cl}_X(A) \coloneqq \bigcap_{B \in M} B   
+    \]
+    with 
+    \[
+        M \coloneqq \{B \subseteq X; B \supseteq  A \:\:\: \text{and } B \:\:\: \text{is closed in } X \}.   
+    \]. 
+\end{definition}
+\begin{remark}
+    The closure of \(A\) is the smallest closed set which contains \(A\). Any closed set which 
+    contains \(A\), also contains cl(\(A\)). 
+\end{remark}
+
+\begin{proposition}
+    Let \(A\) be a subset of a metric space \(X\). Then \(\overline{A} = \text{cl}\left(A\right)\). 
+\end{proposition}
+
+\begin{corollary}
+    Let \(A\) and \(B\) be subsets of \(X\). 
+    \begin{enumerate}[label=(\roman*)]
+        \item \(A \subseteq B \implies \overline{A} \subseteq \overline{B}\). 
+        \item \(\overline{\left(\overline{A}\right)} = \overline{A}\). 
+        \item \(\overline{A \cup B} = \overline{A} \cup \overline{B}\). 
+    \end{enumerate}
+\end{corollary}
+
+\begin{definition}[Interior of a Set]
+    \[
+      \text{int}(A) \coloneqq \text{int}_X (A) \coloneqq \bigcup \{O \subseteq A;O  \text{
+        is open in X
+      }\}  
+    \]
+    int(\(A\)) is the largest open subset of \(A\). 
+\end{definition}
+
+\begin{definition}
+    \[
+        \mathring{A} \coloneqq \{ a \in A ; a \text{ is an interior point of } A\}.   
+    \]
+\end{definition}
+
+\begin{proposition}
+    Let \(A\) be a subset of a metric space \(X\). Then \(\mathring{A} = \text{int}\left(A\right)\). 
+\end{proposition}
+
+\begin{corollary}
+    Let \(A\) and \(B\) be subsets of \(X\). 
+    \begin{enumerate}[label=(\roman*)]
+        \item \(A \subseteq B \Rightarrow \mathring{A} \subseteq \mathring{B}\). 
+        \item \(\left(\mathring{A}\right)^\circ = \mathring{A}\). 
+        \item \(A\) is open \(\Leftrightarrow A = \mathring{A}\). 
+    \end{enumerate}
+\end{corollary}
+
+\section{The Hausdorff Condition}
+
+\begin{definition}
+    For a subset \(A\) of a metric space \(X\), the (topological) \textbf{boundary of}
+    \(A\) is defined by \(\partial A \coloneqq \overline{A}\backslash \mathring{A}\). 
+\end{definition}
+
+\begin{proposition}
+    Let \(A\) be a subset of \(X\). 
+    \begin{itemize}
+        \item \(\partial A \) is closed. 
+        \item \(x\) is in \(\partial A\) if and only if every neighborhood of \(x\) has 
+        nonempty intersection with both \(A\) and \(A^c\). 
+    \end{itemize}
+\end{proposition}
+
+The following proposition shows that, in metric spaces, any two distinct points have disjoint 
+neighborhoods. 
+\begin{proposition}[Hausdorff Condition]
+    Let \(x, y \in X\) be such that \(x \neq y\). Then there are a neighborhood \(U\)
+    of \(x\) and a neighborhood \(V\) of \(y\) such that \(U \cap V = \emptyset\). 
+\end{proposition}
+
+\begin{corollary}
+    Any one element subset of a metric space is closed. 
+\end{corollary}
+
+\section{A Characterization of Continuous Functions}
+
+\begin{theorem}
+    Let \(f \colon X \to Y \) be a function between metric spaces \(X\) and \(Y\). Then the followings
+    are equivalent:
+    \begin{enumerate}[label=(\roman*)]
+        \item \(f\) is continuous. 
+        \item \(f^{-1}\left(O\right)\) is open in \(X\) for each open set \(O\) in \(Y\). 
+        \item \(f^{-1}\left(A\right)\) is closed in \(X\) for each closed set \(A\) in \(Y\). 
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    According to this theorem, a function is continuous if and only if the preimage of any 
+    open set is open, if and only if the preimage of any closed set is closed. We denote 
+    the topology of a metric space \(X\) by \(\tau_X\), that is, 
+    \[
+        \tau_X \coloneqq \{ O \subseteq X ; O \text{ is open in } X \}  
+    \]
+    Then, 
+    \[
+        f \colon X \to Y \text{ is continuous } \Longleftrightarrow f^{-1} \colon \tau_Y \to \tau_X  
+    \]
+\end{remark}
+
+\section{Continuous Extensions}
+
+Let \(X\) and \(Y\) be metric spaces. Suppose that \(D \subseteq X\), \(f \colon D \to Y\) is 
+continuous and \(a \in X\) is a limit point of \(D\). If \(D\) is not closed, then \(a\) may 
+not be in \(D\) and so \(f\) is not defined at \(a\). In this section we consider whether 
+\(f\left(a\right)\) can be defined so that \(f\) is continuous on \(D \cup \{a\}\). If such 
+extensions exist, then, for any sequence (\(x_n\)) in \(D\) which converges to \(a\), 
+\(\left(f\left(x_n\right)\right)\) converges to \(f\left(a\right)\). 
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item The followings are equivalent:
+        \begin{itemize}
+            \item \(\lim_{x\to a}f\left(x\right) = y\). 
+            \item For each neighborhood \(V\) of \(y\) in \(Y\), there is a neighborhood \(U\)
+            of \(a\) in \(X\) such that \(f\left(U \cap D\right) \subseteq V\). 
+        \end{itemize}
+        \item If \(a \in D\) is a limit point of \(D\), then 
+        \[
+            \lim_{x\to a} f(x) = f(a) \Longleftrightarrow f \text{ is continuous at } a.  
+        \]
+    \end{enumerate}
+\end{remark}
+
+\section{Relative Topology}
+
+Let \(X\) be a metric space and \(Y\) a subset of \(X\). Then \(Y\) is itself a metric space
+with respect to the metric \(d_Y \coloneqq d|Y \times Y\) induced from \(X\), and so 'open 
+in (\(Y, d_Y\))' and 'closed in (\(Y, d_Y\))' are well-defined concepts. 
+
+\begin{proposition}
+    Let \(X\) be a metric space and \(M \subseteq Y \subseteq X\). Then \(M\) is open (or closed)
+    in \(Y\) if and only if \(M\) is open (or closed) in (\(Y, d_Y\)). 
+\end{proposition}
+
+\begin{corollary}
+    If \(M \subseteq Y \subseteq X\), then \(M\) is open in \(Y\) if and only if \(Y\backslash M\)
+    is closed in \(Y\). 
+\end{corollary}
+
+
+
+

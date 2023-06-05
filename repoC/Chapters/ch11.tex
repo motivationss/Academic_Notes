@@ -1,0 +1,141 @@
+\chapter{Compactness}
+We see that continuous images of open sets may not be open, and continuous images of closed 
+sets may not be closed. This chapter investigates certain properties that are preserved by 
+continuity. 
+
+\section{Covers}
+
+In the following, \(X \coloneqq \left(X, d\right)\) is a metric space. 
+
+A family of sets \(\{ A_\alpha \subseteq X; \alpha \in \mathcal{A} \}\) is called a 
+\textbf{cover} of the subset \(K \subseteq X\) if \(K \subseteq \bigcup_\alpha A_\alpha\). 
+A cover is called \textbf{open} if each \(A_\alpha\) is open in \(X\). A subset \(K \subseteq X\)
+is called \textbf{compact} if every open cover of \(K\) has a finite subfamily which is also 
+a cover of \(K\). In other words, \(K \subseteq X\) is compact if every open cover of \(K\)
+has a \textbf{finite subcover}. 
+
+\begin{eg}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let (\(x_k\)) be a convergent sequence in \(X\) with limit \(a\). Then the 
+        set \(K \coloneqq \{a\} \cup \{x_k ; k \in \mathbb{N}\} \) is compact. 
+        \item The state of (a) is false, in general, if the limit \(a\) is not included in \(K\). 
+        \item The set of natural numbers \(\mathbb{N}\) is not compact in \(\mathbb{R}\). 
+    \end{enumerate}
+\end{eg}
+
+\begin{proposition}
+    Any compact set \(K \subseteq X\) is closed and bounded in \(X\). 
+\end{proposition}
+
+\section{A Characterization of Compact Set}
+
+% \begin{definition}
+%     A subset \(K\) of \(X\) is \textbf{totally bounded} if, for each \(r > 0\), there 
+%     are \(m \in \mathbb{N}\) and \(x_0,\ldots,x_m \in K\) such that \(K \subseteq \bigcup_{k=0}^m \mathbb{B}\left(x_k, r\right)\). 
+% \end{definition}
+
+\begin{definition}
+    A subset \(K\) of \(X\) is \textbf{totally bounded} if, for each \(r > 0\), there are 
+    \(m \in \mathbb{N}\) and \(x_0, \ldots, x_m \in K\) such that \(K \subseteq \bigcup_{k=0}^m \mathbb{B}\left(x_k,r\right) \). 
+\end{definition}
+
+
+\begin{theorem}
+    A subset \(K \subseteq X\) is compact if and only if every sequence in \(K\) has 
+    a cluster point \(K\). 
+\end{theorem}
+
+
+\section{Sequential Compactness}
+
+\begin{definition}
+    A subset \(K \subseteq X\) is \textbf{sequentially compact} if every sequence in \(K\)
+    has a subsequence which converges to an element of \(K\). 
+\end{definition}
+
+\begin{theorem}
+    A subset of a metric space is compact if and only if it is sequentially compact. 
+\end{theorem}
+
+\begin{theorem}[Heine-Borel]
+    A subset of \(\mathbb{K}^n\) is compact if and only if it is closed and bounded. 
+    In particular, an interval is compact if and only if it is closed and bounded. 
+\end{theorem}
+
+\section{Continuous Functions on Compact Spaces}
+
+\begin{theorem}
+    Let \(X\) and \(Y\) be metric spaces and \(f \colon X \to Y\) continuous. If \(X\)
+    is compact, then \(f\left(X\right)\) is compact. That is, continuous images of compact
+    sets are compact. 
+\end{theorem}
+
+\begin{corollary}
+    Let \(X\) and \(Y\) be metric spaces and \(f \colon X \to Y\). If \(X\) is compact, 
+    then \(f \left(X\right)\) is bounded. 
+\end{corollary}
+
+\begin{theorem}[extreme value theorem]
+    Let \(X\) be a compact metric space and \(f \colon X \to \mathbb{R}\) continuous. 
+    Then there are \(x_0, x_1 \in X\) such that 
+    \[
+        f (x_0) = \text{min}_{x \in X} f(x) \:\:\:\: \text{and} \:\:\:\: f(x_1) = \text{max}_{x\in X}f(x)  
+    \]
+\end{theorem}
+
+
+\section{Total Boundedness}
+
+\begin{theorem}
+    A subset of a metric space is compact if and only if it is complete and totally bounded. 
+\end{theorem}
+
+\section{Uniform continuity}
+
+\begin{definition}
+    Let \(X\) and \(Y\) be metric spaces and \(f \colon X \to Y\). Then \(f\) is called 
+    \textbf{uniformly continuous} if, for each \(\epsilon > 0\), there is some 
+    \(\delta \left(\epsilon\right) > 0\) such that 
+    \[
+        d(f(x), f(y)) < \epsilon \:\:\:\: \text{for all } x,y \in X \: \text{such that } d(x, y) < \delta(\epsilon). 
+    \]
+\end{definition}
+
+\begin{eg}
+    Lipschitz continuous functions are uniformly continuous. 
+\end{eg}
+
+\begin{theorem}
+    Suppose that \(X\) and \(Y\) are metric spaces with \(X\) compact. If \(f \colon X \to Y\)
+    is continuous, then \(f\) is uniformly continuous. That is, continuous functions on 
+    compact sets are uniformly continuous. 
+\end{theorem}
+
+\section{Compactness in General Topological Spaces}
+
+\begin{remark}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let \(X = \left(X, \tau\right)\) be a topological space. Then \(X\) is 
+    \textbf{compact} if \(X\) is a Hausdorff space and every open cover of \(X\) has a finite
+    subcover. The space \(X\) is \textbf{sequentially compact} if it is a Hausdorff space 
+    and every sequence has a convergent subsequence. A subset \(Y \subseteq X\) is \textbf{compact}
+    (or \textbf{sequentially compact}) if the topological subspace (\(Y, \tau_Y\)) is compact
+    (or sequentially compact). 
+        
+        \item Any compact subset \(K\) of a Hausdorff space \(X\) is closed. For each \(x_0 \in K^c\)
+        there are disjoint open sets \(U\) and \(V\) in \(X\) such that \(K \subseteq U\) and 
+        \(x_0 \in V\). In other words, a compact subset of a Hausdorff space and a point, not 
+        in that subset, can be separated by open neighborhoods. 
+        
+        \item Any closed subset of a compact space is compact. 
+        \item Let \(X\) be compact and \(Y\) Hausdorff. Then the image of any continuous 
+        function \(f \colon X \to Y\) is compact. 
+        \item In general topological spaces, compactness and sequential compactness are 
+        distinct concepts. That is, a compact space need not to be sequentially compact, and 
+        a sequentially compact space need not be compact. 
+        \item Uniform continuity is undefined in general topological spaces since the definition 
+        above makes essential use of the metric.  
+    \end{enumerate}
+\end{remark}
+
+
